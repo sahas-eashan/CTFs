@@ -4,7 +4,8 @@
       "Bash(git config:*)",
       "Bash(rm:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch -f --msg-filter \"grep -v ''🤖 Generated'' | grep -v ''Co-Authored-By: Claude'' | cat -s\" -- --all)"
     ],
     "deny": [],
     "ask": []
