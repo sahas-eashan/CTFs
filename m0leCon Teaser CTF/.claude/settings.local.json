@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir)",
+      "Bash(dir:*)",
+      "Bash(python:*)",
+      "Bash(curl -s \"https://aa1fadfd635d-magik.challs.m0lecon.it/static/\")",
+      "Bash(curl -s \"https://aa1fadfd635d-magik.challs.m0lecon.it/\")",
+      "Bash(curl -s \"https://magik.challs.m0lecon.it/\")",
+      "Bash(curl:*)",
+      "Bash(identify:*)",
+      "Bash(python3:*)",
+      "Bash(nc:*)",
+      "Bash(bash -c 'set -x; name=\"\"\"\"x.png |/bin/echo HELLOWORLD>output /tmp/test\"\"\"\"; convert /tmp/input.png -resize 64x64 static/$name.png')",
+      "Bash(convert:*)",
+      "Bash(cd:*)",
+      "Bash(tee:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

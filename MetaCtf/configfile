@@ -1,0 +1,9 @@
+%Image::ExifTool::UserDefined = (
+    'Image::ExifTool::Exif::Main' => {
+        0xc51b => {
+            Name => 'HasselbladExif',
+            Writable => 'undef',
+        },
+    },
+);
+1; #end

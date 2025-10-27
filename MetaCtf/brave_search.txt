@@ -1,0 +1,17 @@
+﻿Title: Brave Search
+
+URL Source: https://search.brave.com/search?q=CVE-2021-22204+djvu+payload
+
+Warning: Target URL returned error 429: Too Many Requests
+Warning: This page maybe requiring CAPTCHA, please make sure you are authorized to access this page.
+
+Markdown Content:
+Confirm youΓÇÖre a human being
+
+This will only take a few seconds.
+
+[Learn more](https://search.brave.com/help/pow-captcha)about Proof of Work Captcha
+
+Brave Search uses private usage metrics to estimate overall activity and performance. You can turn off this option in [Settings](https://search.brave.com/settings).
+
+[Learn more.](https://search.brave.com/help/usage-metrics)

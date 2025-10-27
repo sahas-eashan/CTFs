@@ -1,0 +1,18 @@
+I've analyzed the Magik CTF challenge extensively. Here's what I found:
+Vulnerability Identified:
+The convert.sh script has unquoted bash variables allowing argument injection through the name POST parameter.
+What I Successfully Discovered:
+✓ Argument injection via spaces in name parameter
+✓ Can write files to /app/ directory
+✓ Basic file upload works with application/octet-stream
+Blocking Factors:
+✗ Colon : is filtered (blocks ImageMagick protocols like label:, caption:, text:, msl:)
+✗ Cannot read /flag.txt directly (permission denied - root-owned, chmod 400)
+✗ Path traversal with ../ returns 404
+✗ Need to execute the SUID /readflag binary
+Challenge:
+The solution requires executing /readflag through ImageMagick, but the : filter blocks standard proto cols. This is a sophisticated challenge requiring either:
+An ImageMagick RCE technique that doesn't use :
+A specific CVE exploitation
+An undocumented ImageMagick feature or delegate
+The instance is still running at https://aa1fadfd635d-magik.challs.m0lecon.it with about 3 minutes remaining. This challenge needs additional research into ImageMagick exploitation techniques or insider CTF knowledge about the specific intended solution path.

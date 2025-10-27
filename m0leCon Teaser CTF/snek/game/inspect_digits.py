@@ -1,0 +1,25 @@
+from PIL import Image
+import numpy as np
+
+segments = {
+    'top': ((2,4),(4,16)),
+    'middle': ((9,11),(4,16)),
+    'bottom': ((16,18),(4,16)),
+    'upper_left': ((4,9),(4,6)),
+    'upper_right': ((4,9),(14,16)),
+    'lower_left': ((11,16),(4,6)),
+    'lower_right': ((11,16),(14,16)),
+}
+
+for idx in range(1,7):
+    arr = np.array(Image.open(f"screen_prefix{idx}.png").convert('L'))
+    print('prefix', idx)
+    for tile_idx, (tx,ty) in enumerate([(0,0),(9,0)]):
+        tile = arr[ty*20:(ty+1)*20, tx*20:(tx+1)*20]
+        seg_values = {}
+        for seg,(yr,xr) in segments.items():
+            (y1,y2),(x1,x2) = segments[seg]
+            block = tile[y1:y2, x1:x2]
+            seg_values[seg] = block.mean()
+        print(' tile', tile_idx, seg_values)
+    print()

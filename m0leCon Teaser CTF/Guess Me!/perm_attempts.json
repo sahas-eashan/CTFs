@@ -1,0 +1,56 @@
+[
+  {
+    "perm": "m0leCon",
+    "key": "0d8660c608d22c445d76f0992678fa60",
+    "nonce": "d8bad22e9bacf2ca186b3a960d86d86e",
+    "ct": "f2177a034e45b590a6e032744c868c4505c2531cbdbc61b31cdb71871fd65740",
+    "tag": "3e3741b26d67a34a7140cef3cbe66365",
+    "banner": "Enter nonce (hex): ",
+    "reply": "Enter additional_data (hex): Enter ciphertext (hex): Enter tag (hex): Tag is invalid\nEnter nonce (hex): "
+  },
+  {
+    "perm": "m0leCon",
+    "key": "0d8660c608d22c445d76f0992678fa60",
+    "nonce": "3b75aa314e46a7dfc2baa1cc9d9c02e7",
+    "ct": "b418cdb4f110ebb0cd19973cbef20b70fc212bf9a98a4ec711c547fc6f5d66c0",
+    "tag": "e5bfbdc064e5a92d31575362d809ed19",
+    "banner": "Enter nonce (hex): ",
+    "reply": "Enter additional_data (hex): Enter ciphertext (hex): Enter tag (hex): Tag is invalid\nEnter nonce (hex): "
+  },
+  {
+    "perm": "m0leCon",
+    "key": "0d8660c608d22c445d76f0992678fa60",
+    "nonce": "dec2b1c460aa961a108c4d3d824e8d65",
+    "ct": "bc5e252b4b4fa363b3d3cbac35efaab4b89abcb27b43340bf4f07332dec9dcf5",
+    "tag": "a4c9ba28e6277b591f47e71b0648bf5c",
+    "banner": "Enter nonce (hex): ",
+    "reply": "Enter additional_data (hex): Enter ciphertext (hex): Enter tag (hex): Tag is invalid\nEnter nonce (hex): "
+  },
+  {
+    "perm": "m0leCon",
+    "key": "0d8660c608d22c445d76f0992678fa60",
+    "nonce": "1285e335d4c6be9833d680532df99a1e",
+    "ct": "cb57edbdc2139f583986d9aa290b1d62cf3ee7076f1214e730498e954c65af9b",
+    "tag": "276a16de6e05e10f003d856f3d639df5",
+    "banner": "Enter nonce (hex): ",
+    "reply": "Enter additional_data (hex): Enter ciphertext (hex): Enter tag (hex): Tag is invalid\nEnter nonce (hex): "
+  },
+  {
+    "perm": "m0leCon",
+    "key": "0d8660c608d22c445d76f0992678fa60",
+    "nonce": "7f4054bfe58eb81c9c5176401d429510",
+    "ct": "93832a03dcd64a01762006140ca7fca23c05e11cf6f6df49113b73b060ea1247",
+    "tag": "f991d239d2e2363235c1d7dfcd156a4e",
+    "banner": "Enter nonce (hex): ",
+    "reply": "Enter additional_data (hex): Enter ciphertext (hex): Enter tag (hex): Tag is invalid\nEnter nonce (hex): "
+  },
+  {
+    "perm": "m0leCon",
+    "key": "0d8660c608d22c445d76f0992678fa60",
+    "nonce": "4d53ce629eee274dadcf994155519afb",
+    "ct": "8a9aa63a9b5c224d237bdca10f8bc0bc7d775cf9f0b6cc21c74496b95d886b9f",
+    "tag": "30589bf05fd18e639d884c94cb57d36d",
+    "banner": "Enter nonce (hex): ",
+    "reply": "Enter additional_data (hex): Enter ciphertext (hex): Enter tag (hex): Tag is invalid\nEnter nonce (hex): "
+  }
+]
