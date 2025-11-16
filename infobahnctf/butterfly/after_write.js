@@ -1,0 +1,11 @@
+const N=73;
+let arr=[1.1,2.2];
+for(let i=0;i<N;i++) arr['p'+i]=i;
+let ab=new ArrayBuffer(0x80);
+let len=arr.length;
+arr.magic(len, 32+11);
+arr.some = 0x1234;
+console.log('arr after set');
+%DebugPrint(arr);
+console.log('ab after');
+%DebugPrint(ab);

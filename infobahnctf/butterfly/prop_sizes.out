@@ -1,0 +1,665 @@
+## props 1
+DebugPrint: 0x256e00883721: [JSArray]
+ - map: 0x256e00817f85 <Map[16](PACKED_DOUBLE_ELEMENTS)> [FastProperties]
+ - prototype: 0x256e0080ae39 <JSArray[0]>
+ - elements: 0x256e00883709 <FixedDoubleArray[2]> [PACKED_DOUBLE_ELEMENTS]
+ - length: 2
+ - properties: 0x256e0088376d <PropertyArray[3]>
+ - All own properties (excluding elements): {
+    0x256e00000df1: [String] in ReadOnlySpace: #length: 0x256e00036845 <AccessorInfo name= 0x256e00000df1 <String[6]: #length>, data= 0x256e00000011 <undefined>> (const accessor descriptor, attrs: [W__]), location: descriptor
+    0x256e00817f75: [String] in OldSpace: #p0: 0 (const data field 0, attrs: [WEC]) @ Any, location: properties[0]
+ }
+ - elements: 0x256e00883709 <FixedDoubleArray[2]> {
+           0: 1.1
+           1: 2.2
+ }
+0x256e00817f85: [Map] in OldSpace
+ - map: 0x256e00802db9 <MetaMap (0x256e00802e09 <NativeContext[302]>)>
+ - type: JS_ARRAY_TYPE
+ - instance size: 16
+ - inobject properties: 0
+ - unused property fields: 2
+ - elements kind: PACKED_DOUBLE_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x256e0080b4f1 <Map[16](PACKED_DOUBLE_ELEMENTS)>
+ - prototype_validity_cell: 0x256e00803f85 <Cell value= [weak] 0x256e00802e09 <NativeContext[302]>>
+ - instance descriptors (own) #2: 0x256e00883741 <DescriptorArray[2]>
+ - prototype: 0x256e0080ae39 <JSArray[0]>
+ - constructor: 0x256e0080ad61 <JSFunction Array (sfi = 0x256e00066001)>
+ - dependent code: 0x256e000007cd <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+## buf
+DebugPrint: 0x256e00883781: [JSArrayBuffer]
+ - map: 0x256e0080f271 <Map[56](HOLEY_ELEMENTS)> [FastProperties]
+ - prototype: 0x256e0080f411 <Object map = 0x256e0080f299>
+ - elements: 0x256e000007bd <FixedArray[0]> [HOLEY_ELEMENTS]
+ - cpp_heap_wrappable: 0
+ - backing_store: 0x3540003a3c0
+ - byte_length: 8
+ - max_byte_length: 8
+ - detach key: 0x256e00000011 <undefined>
+ - detachable
+ - properties: 0x256e000007bd <FixedArray[0]>
+ - All own properties (excluding elements): {}
+0x256e0080f271: [Map] in OldSpace
+ - map: 0x256e00802db9 <MetaMap (0x256e00802e09 <NativeContext[302]>)>
+ - type: JS_ARRAY_BUFFER_TYPE
+ - instance size: 56
+ - inobject properties: 0
+ - unused property fields: 0
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x256e00000011 <undefined>
+ - prototype_validity_cell: 0x256e00000ac9 <Cell value= [cleared]>
+ - instance descriptors (own) #0: 0x256e000007e5 <DescriptorArray[0]>
+ - prototype: 0x256e0080f411 <Object map = 0x256e0080f299>
+ - constructor: 0x256e0080f221 <JSFunction ArrayBuffer (sfi = 0x256e0006a681)>
+ - dependent code: 0x256e000007cd <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+## props 2
+DebugPrint: 0x256e008837d1: [JSArray]
+ - map: 0x256e00818031 <Map[16](PACKED_DOUBLE_ELEMENTS)> [FastProperties]
+ - prototype: 0x256e0080ae39 <JSArray[0]>
+ - elements: 0x256e008837b9 <FixedDoubleArray[2]> [PACKED_DOUBLE_ELEMENTS]
+ - length: 2
+ - properties: 0x256e008837f1 <PropertyArray[3]>
+ - All own properties (excluding elements): {
+    0x256e00000df1: [String] in ReadOnlySpace: #length: 0x256e00036845 <AccessorInfo name= 0x256e00000df1 <String[6]: #length>, data= 0x256e00000011 <undefined>> (const accessor descriptor, attrs: [W__]), location: descriptor
+    0x256e00817f75: [String] in OldSpace: #p0: 0 (const data field 0, attrs: [WEC]) @ Any, location: properties[0]
+    0x256e00818021: [String] in OldSpace: #p1: 1 (const data field 1, attrs: [WEC]) @ Any, location: properties[1]
+ }
+ - elements: 0x256e008837b9 <FixedDoubleArray[2]> {
+           0: 1.1
+           1: 2.2
+ }
+0x256e00818031: [Map] in OldSpace
+ - map: 0x256e00802db9 <MetaMap (0x256e00802e09 <NativeContext[302]>)>
+ - type: JS_ARRAY_TYPE
+ - instance size: 16
+ - inobject properties: 0
+ - unused property fields: 1
+ - elements kind: PACKED_DOUBLE_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x256e00817f85 <Map[16](PACKED_DOUBLE_ELEMENTS)>
+ - prototype_validity_cell: 0x256e00803f85 <Cell value= [weak] 0x256e00802e09 <NativeContext[302]>>
+ - instance descriptors (own) #3: 0x256e00883815 <DescriptorArray[3]>
+ - prototype: 0x256e0080ae39 <JSArray[0]>
+ - constructor: 0x256e0080ad61 <JSFunction Array (sfi = 0x256e00066001)>
+ - dependent code: 0x256e000007cd <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+## buf
+DebugPrint: 0x256e0088384d: [JSArrayBuffer]
+ - map: 0x256e0080f271 <Map[56](HOLEY_ELEMENTS)> [FastProperties]
+ - prototype: 0x256e0080f411 <Object map = 0x256e0080f299>
+ - elements: 0x256e000007bd <FixedArray[0]> [HOLEY_ELEMENTS]
+ - cpp_heap_wrappable: 0
+ - backing_store: 0x3540003a3b0
+ - byte_length: 8
+ - max_byte_length: 8
+ - detach key: 0x256e00000011 <undefined>
+ - detachable
+ - properties: 0x256e000007bd <FixedArray[0]>
+ - All own properties (excluding elements): {}
+0x256e0080f271: [Map] in OldSpace
+ - map: 0x256e00802db9 <MetaMap (0x256e00802e09 <NativeContext[302]>)>
+ - type: JS_ARRAY_BUFFER_TYPE
+ - instance size: 56
+ - inobject properties: 0
+ - unused property fields: 0
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x256e00000011 <undefined>
+ - prototype_validity_cell: 0x256e00000ac9 <Cell value= [cleared]>
+ - instance descriptors (own) #0: 0x256e000007e5 <DescriptorArray[0]>
+ - prototype: 0x256e0080f411 <Object map = 0x256e0080f299>
+ - constructor: 0x256e0080f221 <JSFunction ArrayBuffer (sfi = 0x256e0006a681)>
+ - dependent code: 0x256e000007cd <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+## props 3
+DebugPrint: 0x256e0088389d: [JSArray]
+ - map: 0x256e00818069 <Map[16](PACKED_DOUBLE_ELEMENTS)> [FastProperties]
+ - prototype: 0x256e0080ae39 <JSArray[0]>
+ - elements: 0x256e00883885 <FixedDoubleArray[2]> [PACKED_DOUBLE_ELEMENTS]
+ - length: 2
+ - properties: 0x256e008838bd <PropertyArray[3]>
+ - All own properties (excluding elements): {
+    0x256e00000df1: [String] in ReadOnlySpace: #length: 0x256e00036845 <AccessorInfo name= 0x256e00000df1 <String[6]: #length>, data= 0x256e00000011 <undefined>> (const accessor descriptor, attrs: [W__]), location: descriptor
+    0x256e00817f75: [String] in OldSpace: #p0: 0 (const data field 0, attrs: [WEC]) @ Any, location: properties[0]
+    0x256e00818021: [String] in OldSpace: #p1: 1 (const data field 1, attrs: [WEC]) @ Any, location: properties[1]
+    0x256e00818059: [String] in OldSpace: #p2: 2 (const data field 2, attrs: [WEC]) @ Any, location: properties[2]
+ }
+ - elements: 0x256e00883885 <FixedDoubleArray[2]> {
+           0: 1.1
+           1: 2.2
+ }
+0x256e00818069: [Map] in OldSpace
+ - map: 0x256e00802db9 <MetaMap (0x256e00802e09 <NativeContext[302]>)>
+ - type: JS_ARRAY_TYPE
+ - instance size: 16
+ - inobject properties: 0
+ - unused property fields: 0
+ - elements kind: PACKED_DOUBLE_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x256e00818031 <Map[16](PACKED_DOUBLE_ELEMENTS)>
+ - prototype_validity_cell: 0x256e00803f85 <Cell value= [weak] 0x256e00802e09 <NativeContext[302]>>
+ - instance descriptors (own) #4: 0x256e008838f1 <DescriptorArray[4]>
+ - prototype: 0x256e0080ae39 <JSArray[0]>
+ - constructor: 0x256e0080ad61 <JSFunction Array (sfi = 0x256e00066001)>
+ - dependent code: 0x256e000007cd <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+## buf
+DebugPrint: 0x256e00883935: [JSArrayBuffer]
+ - map: 0x256e0080f271 <Map[56](HOLEY_ELEMENTS)> [FastProperties]
+ - prototype: 0x256e0080f411 <Object map = 0x256e0080f299>
+ - elements: 0x256e000007bd <FixedArray[0]> [HOLEY_ELEMENTS]
+ - cpp_heap_wrappable: 0
+ - backing_store: 0x3540003a3a0
+ - byte_length: 8
+ - max_byte_length: 8
+ - detach key: 0x256e00000011 <undefined>
+ - detachable
+ - properties: 0x256e000007bd <FixedArray[0]>
+ - All own properties (excluding elements): {}
+0x256e0080f271: [Map] in OldSpace
+ - map: 0x256e00802db9 <MetaMap (0x256e00802e09 <NativeContext[302]>)>
+ - type: JS_ARRAY_BUFFER_TYPE
+ - instance size: 56
+ - inobject properties: 0
+ - unused property fields: 0
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x256e00000011 <undefined>
+ - prototype_validity_cell: 0x256e00000ac9 <Cell value= [cleared]>
+ - instance descriptors (own) #0: 0x256e000007e5 <DescriptorArray[0]>
+ - prototype: 0x256e0080f411 <Object map = 0x256e0080f299>
+ - constructor: 0x256e0080f221 <JSFunction ArrayBuffer (sfi = 0x256e0006a681)>
+ - dependent code: 0x256e000007cd <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+## props 4
+DebugPrint: 0x256e00883985: [JSArray]
+ - map: 0x256e008180a1 <Map[16](PACKED_DOUBLE_ELEMENTS)> [FastProperties]
+ - prototype: 0x256e0080ae39 <JSArray[0]>
+ - elements: 0x256e0088396d <FixedDoubleArray[2]> [PACKED_DOUBLE_ELEMENTS]
+ - length: 2
+ - properties: 0x256e00883a39 <PropertyArray[6]>
+ - All own properties (excluding elements): {
+    0x256e00000df1: [String] in ReadOnlySpace: #length: 0x256e00036845 <AccessorInfo name= 0x256e00000df1 <String[6]: #length>, data= 0x256e00000011 <undefined>> (const accessor descriptor, attrs: [W__]), location: descriptor
+    0x256e00817f75: [String] in OldSpace: #p0: 0 (const data field 0, attrs: [WEC]) @ Any, location: properties[0]
+    0x256e00818021: [String] in OldSpace: #p1: 1 (const data field 1, attrs: [WEC]) @ Any, location: properties[1]
+    0x256e00818059: [String] in OldSpace: #p2: 2 (const data field 2, attrs: [WEC]) @ Any, location: properties[2]
+    0x256e00818091: [String] in OldSpace: #p3: 3 (const data field 3, attrs: [WEC]) @ Any, location: properties[3]
+ }
+ - elements: 0x256e0088396d <FixedDoubleArray[2]> {
+           0: 1.1
+           1: 2.2
+ }
+0x256e008180a1: [Map] in OldSpace
+ - map: 0x256e00802db9 <MetaMap (0x256e00802e09 <NativeContext[302]>)>
+ - type: JS_ARRAY_TYPE
+ - instance size: 16
+ - inobject properties: 0
+ - unused property fields: 2
+ - elements kind: PACKED_DOUBLE_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x256e00818069 <Map[16](PACKED_DOUBLE_ELEMENTS)>
+ - prototype_validity_cell: 0x256e00803f85 <Cell value= [weak] 0x256e00802e09 <NativeContext[302]>>
+ - instance descriptors (own) #5: 0x256e008839e9 <DescriptorArray[5]>
+ - prototype: 0x256e0080ae39 <JSArray[0]>
+ - constructor: 0x256e0080ad61 <JSFunction Array (sfi = 0x256e00066001)>
+ - dependent code: 0x256e000007cd <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+## buf
+DebugPrint: 0x256e00883a59: [JSArrayBuffer]
+ - map: 0x256e0080f271 <Map[56](HOLEY_ELEMENTS)> [FastProperties]
+ - prototype: 0x256e0080f411 <Object map = 0x256e0080f299>
+ - elements: 0x256e000007bd <FixedArray[0]> [HOLEY_ELEMENTS]
+ - cpp_heap_wrappable: 0
+ - backing_store: 0x3540003a390
+ - byte_length: 8
+ - max_byte_length: 8
+ - detach key: 0x256e00000011 <undefined>
+ - detachable
+ - properties: 0x256e000007bd <FixedArray[0]>
+ - All own properties (excluding elements): {}
+0x256e0080f271: [Map] in OldSpace
+ - map: 0x256e00802db9 <MetaMap (0x256e00802e09 <NativeContext[302]>)>
+ - type: JS_ARRAY_BUFFER_TYPE
+ - instance size: 56
+ - inobject properties: 0
+ - unused property fields: 0
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x256e00000011 <undefined>
+ - prototype_validity_cell: 0x256e00000ac9 <Cell value= [cleared]>
+ - instance descriptors (own) #0: 0x256e000007e5 <DescriptorArray[0]>
+ - prototype: 0x256e0080f411 <Object map = 0x256e0080f299>
+ - constructor: 0x256e0080f221 <JSFunction ArrayBuffer (sfi = 0x256e0006a681)>
+ - dependent code: 0x256e000007cd <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+## props 5
+DebugPrint: 0x256e00883aa9: [JSArray]
+ - map: 0x256e008180d9 <Map[16](PACKED_DOUBLE_ELEMENTS)> [FastProperties]
+ - prototype: 0x256e0080ae39 <JSArray[0]>
+ - elements: 0x256e00883a91 <FixedDoubleArray[2]> [PACKED_DOUBLE_ELEMENTS]
+ - length: 2
+ - properties: 0x256e00883b0d <PropertyArray[6]>
+ - All own properties (excluding elements): {
+    0x256e00000df1: [String] in ReadOnlySpace: #length: 0x256e00036845 <AccessorInfo name= 0x256e00000df1 <String[6]: #length>, data= 0x256e00000011 <undefined>> (const accessor descriptor, attrs: [W__]), location: descriptor
+    0x256e00817f75: [String] in OldSpace: #p0: 0 (const data field 0, attrs: [WEC]) @ Any, location: properties[0]
+    0x256e00818021: [String] in OldSpace: #p1: 1 (const data field 1, attrs: [WEC]) @ Any, location: properties[1]
+    0x256e00818059: [String] in OldSpace: #p2: 2 (const data field 2, attrs: [WEC]) @ Any, location: properties[2]
+    0x256e00818091: [String] in OldSpace: #p3: 3 (const data field 3, attrs: [WEC]) @ Any, location: properties[3]
+    0x256e008180c9: [String] in OldSpace: #p4: 4 (const data field 4, attrs: [WEC]) @ Any, location: properties[4]
+ }
+ - elements: 0x256e00883a91 <FixedDoubleArray[2]> {
+           0: 1.1
+           1: 2.2
+ }
+0x256e008180d9: [Map] in OldSpace
+ - map: 0x256e00802db9 <MetaMap (0x256e00802e09 <NativeContext[302]>)>
+ - type: JS_ARRAY_TYPE
+ - instance size: 16
+ - inobject properties: 0
+ - unused property fields: 1
+ - elements kind: PACKED_DOUBLE_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x256e008180a1 <Map[16](PACKED_DOUBLE_ELEMENTS)>
+ - prototype_validity_cell: 0x256e00803f85 <Cell value= [weak] 0x256e00802e09 <NativeContext[302]>>
+ - instance descriptors (own) #6: 0x256e00883b3d <DescriptorArray[6]>
+ - prototype: 0x256e0080ae39 <JSArray[0]>
+ - constructor: 0x256e0080ad61 <JSFunction Array (sfi = 0x256e00066001)>
+ - dependent code: 0x256e000007cd <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+## buf
+DebugPrint: 0x256e00883b99: [JSArrayBuffer]
+ - map: 0x256e0080f271 <Map[56](HOLEY_ELEMENTS)> [FastProperties]
+ - prototype: 0x256e0080f411 <Object map = 0x256e0080f299>
+ - elements: 0x256e000007bd <FixedArray[0]> [HOLEY_ELEMENTS]
+ - cpp_heap_wrappable: 0
+ - backing_store: 0x3540003a380
+ - byte_length: 8
+ - max_byte_length: 8
+ - detach key: 0x256e00000011 <undefined>
+ - detachable
+ - properties: 0x256e000007bd <FixedArray[0]>
+ - All own properties (excluding elements): {}
+0x256e0080f271: [Map] in OldSpace
+ - map: 0x256e00802db9 <MetaMap (0x256e00802e09 <NativeContext[302]>)>
+ - type: JS_ARRAY_BUFFER_TYPE
+ - instance size: 56
+ - inobject properties: 0
+ - unused property fields: 0
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x256e00000011 <undefined>
+ - prototype_validity_cell: 0x256e00000ac9 <Cell value= [cleared]>
+ - instance descriptors (own) #0: 0x256e000007e5 <DescriptorArray[0]>
+ - prototype: 0x256e0080f411 <Object map = 0x256e0080f299>
+ - constructor: 0x256e0080f221 <JSFunction ArrayBuffer (sfi = 0x256e0006a681)>
+ - dependent code: 0x256e000007cd <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+## props 6
+DebugPrint: 0x256e00883be9: [JSArray]
+ - map: 0x256e0081820d <Map[16](PACKED_DOUBLE_ELEMENTS)> [FastProperties]
+ - prototype: 0x256e0080ae39 <JSArray[0]>
+ - elements: 0x256e00883bd1 <FixedDoubleArray[2]> [PACKED_DOUBLE_ELEMENTS]
+ - length: 2
+ - properties: 0x256e00883c5d <PropertyArray[6]>
+ - All own properties (excluding elements): {
+    0x256e00000df1: [String] in ReadOnlySpace: #length: 0x256e00036845 <AccessorInfo name= 0x256e00000df1 <String[6]: #length>, data= 0x256e00000011 <undefined>> (const accessor descriptor, attrs: [W__]), location: descriptor
+    0x256e00817f75: [String] in OldSpace: #p0: 0 (const data field 0, attrs: [WEC]) @ Any, location: properties[0]
+    0x256e00818021: [String] in OldSpace: #p1: 1 (const data field 1, attrs: [WEC]) @ Any, location: properties[1]
+    0x256e00818059: [String] in OldSpace: #p2: 2 (const data field 2, attrs: [WEC]) @ Any, location: properties[2]
+    0x256e00818091: [String] in OldSpace: #p3: 3 (const data field 3, attrs: [WEC]) @ Any, location: properties[3]
+    0x256e008180c9: [String] in OldSpace: #p4: 4 (const data field 4, attrs: [WEC]) @ Any, location: properties[4]
+    0x256e008181fd: [String] in OldSpace: #p5: 5 (const data field 5, attrs: [WEC]) @ Any, location: properties[5]
+ }
+ - elements: 0x256e00883bd1 <FixedDoubleArray[2]> {
+           0: 1.1
+           1: 2.2
+ }
+0x256e0081820d: [Map] in OldSpace
+ - map: 0x256e00802db9 <MetaMap (0x256e00802e09 <NativeContext[302]>)>
+ - type: JS_ARRAY_TYPE
+ - instance size: 16
+ - inobject properties: 0
+ - unused property fields: 0
+ - elements kind: PACKED_DOUBLE_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x256e008180d9 <Map[16](PACKED_DOUBLE_ELEMENTS)>
+ - prototype_validity_cell: 0x256e00803f85 <Cell value= [weak] 0x256e00802e09 <NativeContext[302]>>
+ - instance descriptors (own) #7: 0x256e00883c9d <DescriptorArray[7]>
+ - prototype: 0x256e0080ae39 <JSArray[0]>
+ - constructor: 0x256e0080ad61 <JSFunction Array (sfi = 0x256e00066001)>
+ - dependent code: 0x256e000007cd <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+## buf
+DebugPrint: 0x256e00883d05: [JSArrayBuffer]
+ - map: 0x256e0080f271 <Map[56](HOLEY_ELEMENTS)> [FastProperties]
+ - prototype: 0x256e0080f411 <Object map = 0x256e0080f299>
+ - elements: 0x256e000007bd <FixedArray[0]> [HOLEY_ELEMENTS]
+ - cpp_heap_wrappable: 0
+ - backing_store: 0x3540003a370
+ - byte_length: 8
+ - max_byte_length: 8
+ - detach key: 0x256e00000011 <undefined>
+ - detachable
+ - properties: 0x256e000007bd <FixedArray[0]>
+ - All own properties (excluding elements): {}
+0x256e0080f271: [Map] in OldSpace
+ - map: 0x256e00802db9 <MetaMap (0x256e00802e09 <NativeContext[302]>)>
+ - type: JS_ARRAY_BUFFER_TYPE
+ - instance size: 56
+ - inobject properties: 0
+ - unused property fields: 0
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x256e00000011 <undefined>
+ - prototype_validity_cell: 0x256e00000ac9 <Cell value= [cleared]>
+ - instance descriptors (own) #0: 0x256e000007e5 <DescriptorArray[0]>
+ - prototype: 0x256e0080f411 <Object map = 0x256e0080f299>
+ - constructor: 0x256e0080f221 <JSFunction ArrayBuffer (sfi = 0x256e0006a681)>
+ - dependent code: 0x256e000007cd <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+## props 7
+DebugPrint: 0x256e00883d55: [JSArray]
+ - map: 0x256e00818295 <Map[16](PACKED_DOUBLE_ELEMENTS)> [FastProperties]
+ - prototype: 0x256e0080ae39 <JSArray[0]>
+ - elements: 0x256e00883d6d <FixedDoubleArray[2]> [PACKED_DOUBLE_ELEMENTS]
+ - length: 2
+ - properties: 0x256e00883e9d <PropertyArray[9]>
+ - All own properties (excluding elements): {
+    0x256e00000df1: [String] in ReadOnlySpace: #length: 0x256e00036845 <AccessorInfo name= 0x256e00000df1 <String[6]: #length>, data= 0x256e00000011 <undefined>> (const accessor descriptor, attrs: [W__]), location: descriptor
+    0x256e00817f75: [String] in OldSpace: #p0: 0 (const data field 0, attrs: [WEC]) @ Any, location: properties[0]
+    0x256e00818021: [String] in OldSpace: #p1: 1 (const data field 1, attrs: [WEC]) @ Any, location: properties[1]
+    0x256e00818059: [String] in OldSpace: #p2: 2 (const data field 2, attrs: [WEC]) @ Any, location: properties[2]
+    0x256e00818091: [String] in OldSpace: #p3: 3 (const data field 3, attrs: [WEC]) @ Any, location: properties[3]
+    0x256e008180c9: [String] in OldSpace: #p4: 4 (const data field 4, attrs: [WEC]) @ Any, location: properties[4]
+    0x256e008181fd: [String] in OldSpace: #p5: 5 (const data field 5, attrs: [WEC]) @ Any, location: properties[5]
+    0x256e00818285: [String] in OldSpace: #p6: 6 (const data field 6, attrs: [WEC]) @ Any, location: properties[6]
+ }
+ - elements: 0x256e00883d6d <FixedDoubleArray[2]> {
+           0: 1.1
+           1: 2.2
+ }
+0x256e00818295: [Map] in OldSpace
+ - map: 0x256e00802db9 <MetaMap (0x256e00802e09 <NativeContext[302]>)>
+ - type: JS_ARRAY_TYPE
+ - instance size: 16
+ - inobject properties: 0
+ - unused property fields: 2
+ - elements kind: PACKED_DOUBLE_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x256e0081820d <Map[16](PACKED_DOUBLE_ELEMENTS)>
+ - prototype_validity_cell: 0x256e00803f85 <Cell value= [weak] 0x256e00802e09 <NativeContext[302]>>
+ - instance descriptors (own) #8: 0x256e00883e29 <DescriptorArray[8]>
+ - prototype: 0x256e0080ae39 <JSArray[0]>
+ - constructor: 0x256e0080ad61 <JSFunction Array (sfi = 0x256e00066001)>
+ - dependent code: 0x256e000007cd <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+## buf
+DebugPrint: 0x256e00883ec9: [JSArrayBuffer]
+ - map: 0x256e0080f271 <Map[56](HOLEY_ELEMENTS)> [FastProperties]
+ - prototype: 0x256e0080f411 <Object map = 0x256e0080f299>
+ - elements: 0x256e000007bd <FixedArray[0]> [HOLEY_ELEMENTS]
+ - cpp_heap_wrappable: 0
+ - backing_store: 0x3540003a360
+ - byte_length: 8
+ - max_byte_length: 8
+ - detach key: 0x256e00000011 <undefined>
+ - detachable
+ - properties: 0x256e000007bd <FixedArray[0]>
+ - All own properties (excluding elements): {}
+0x256e0080f271: [Map] in OldSpace
+ - map: 0x256e00802db9 <MetaMap (0x256e00802e09 <NativeContext[302]>)>
+ - type: JS_ARRAY_BUFFER_TYPE
+ - instance size: 56
+ - inobject properties: 0
+ - unused property fields: 0
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x256e00000011 <undefined>
+ - prototype_validity_cell: 0x256e00000ac9 <Cell value= [cleared]>
+ - instance descriptors (own) #0: 0x256e000007e5 <DescriptorArray[0]>
+ - prototype: 0x256e0080f411 <Object map = 0x256e0080f299>
+ - constructor: 0x256e0080f221 <JSFunction ArrayBuffer (sfi = 0x256e0006a681)>
+ - dependent code: 0x256e000007cd <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+## props 8
+DebugPrint: 0x256e00883f19: [JSArray]
+ - map: 0x256e008182cd <Map[16](PACKED_DOUBLE_ELEMENTS)> [FastProperties]
+ - prototype: 0x256e0080ae39 <JSArray[0]>
+ - elements: 0x256e00883f01 <FixedDoubleArray[2]> [PACKED_DOUBLE_ELEMENTS]
+ - length: 2
+ - properties: 0x256e00883fd5 <PropertyArray[9]>
+ - All own properties (excluding elements): {
+    0x256e00000df1: [String] in ReadOnlySpace: #length: 0x256e00036845 <AccessorInfo name= 0x256e00000df1 <String[6]: #length>, data= 0x256e00000011 <undefined>> (const accessor descriptor, attrs: [W__]), location: descriptor
+    0x256e00817f75: [String] in OldSpace: #p0: 0 (const data field 0, attrs: [WEC]) @ Any, location: properties[0]
+    0x256e00818021: [String] in OldSpace: #p1: 1 (const data field 1, attrs: [WEC]) @ Any, location: properties[1]
+    0x256e00818059: [String] in OldSpace: #p2: 2 (const data field 2, attrs: [WEC]) @ Any, location: properties[2]
+    0x256e00818091: [String] in OldSpace: #p3: 3 (const data field 3, attrs: [WEC]) @ Any, location: properties[3]
+    0x256e008180c9: [String] in OldSpace: #p4: 4 (const data field 4, attrs: [WEC]) @ Any, location: properties[4]
+    0x256e008181fd: [String] in OldSpace: #p5: 5 (const data field 5, attrs: [WEC]) @ Any, location: properties[5]
+    0x256e00818285: [String] in OldSpace: #p6: 6 (const data field 6, attrs: [WEC]) @ Any, location: properties[6]
+    0x256e008182bd: [String] in OldSpace: #p7: 7 (const data field 7, attrs: [WEC]) @ Any, location: properties[7]
+ }
+ - elements: 0x256e00883f01 <FixedDoubleArray[2]> {
+           0: 1.1
+           1: 2.2
+ }
+0x256e008182cd: [Map] in OldSpace
+ - map: 0x256e00802db9 <MetaMap (0x256e00802e09 <NativeContext[302]>)>
+ - type: JS_ARRAY_TYPE
+ - instance size: 16
+ - inobject properties: 0
+ - unused property fields: 1
+ - elements kind: PACKED_DOUBLE_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x256e00818295 <Map[16](PACKED_DOUBLE_ELEMENTS)>
+ - prototype_validity_cell: 0x256e00803f85 <Cell value= [weak] 0x256e00802e09 <NativeContext[302]>>
+ - instance descriptors (own) #9: 0x256e00884011 <DescriptorArray[9]>
+ - prototype: 0x256e0080ae39 <JSArray[0]>
+ - constructor: 0x256e0080ad61 <JSFunction Array (sfi = 0x256e00066001)>
+ - dependent code: 0x256e000007cd <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+## buf
+DebugPrint: 0x256e0088409d: [JSArrayBuffer]
+ - map: 0x256e0080f271 <Map[56](HOLEY_ELEMENTS)> [FastProperties]
+ - prototype: 0x256e0080f411 <Object map = 0x256e0080f299>
+ - elements: 0x256e000007bd <FixedArray[0]> [HOLEY_ELEMENTS]
+ - cpp_heap_wrappable: 0
+ - backing_store: 0x3540003a350
+ - byte_length: 8
+ - max_byte_length: 8
+ - detach key: 0x256e00000011 <undefined>
+ - detachable
+ - properties: 0x256e000007bd <FixedArray[0]>
+ - All own properties (excluding elements): {}
+0x256e0080f271: [Map] in OldSpace
+ - map: 0x256e00802db9 <MetaMap (0x256e00802e09 <NativeContext[302]>)>
+ - type: JS_ARRAY_BUFFER_TYPE
+ - instance size: 56
+ - inobject properties: 0
+ - unused property fields: 0
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x256e00000011 <undefined>
+ - prototype_validity_cell: 0x256e00000ac9 <Cell value= [cleared]>
+ - instance descriptors (own) #0: 0x256e000007e5 <DescriptorArray[0]>
+ - prototype: 0x256e0080f411 <Object map = 0x256e0080f299>
+ - constructor: 0x256e0080f221 <JSFunction ArrayBuffer (sfi = 0x256e0006a681)>
+ - dependent code: 0x256e000007cd <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+## props 9
+DebugPrint: 0x256e008840ed: [JSArray]
+ - map: 0x256e00818305 <Map[16](PACKED_DOUBLE_ELEMENTS)> [FastProperties]
+ - prototype: 0x256e0080ae39 <JSArray[0]>
+ - elements: 0x256e008840d5 <FixedDoubleArray[2]> [PACKED_DOUBLE_ELEMENTS]
+ - length: 2
+ - properties: 0x256e008841a9 <PropertyArray[9]>
+ - All own properties (excluding elements): {
+    0x256e00000df1: [String] in ReadOnlySpace: #length: 0x256e00036845 <AccessorInfo name= 0x256e00000df1 <String[6]: #length>, data= 0x256e00000011 <undefined>> (const accessor descriptor, attrs: [W__]), location: descriptor
+    0x256e00817f75: [String] in OldSpace: #p0: 0 (const data field 0, attrs: [WEC]) @ Any, location: properties[0]
+    0x256e00818021: [String] in OldSpace: #p1: 1 (const data field 1, attrs: [WEC]) @ Any, location: properties[1]
+    0x256e00818059: [String] in OldSpace: #p2: 2 (const data field 2, attrs: [WEC]) @ Any, location: properties[2]
+    0x256e00818091: [String] in OldSpace: #p3: 3 (const data field 3, attrs: [WEC]) @ Any, location: properties[3]
+    0x256e008180c9: [String] in OldSpace: #p4: 4 (const data field 4, attrs: [WEC]) @ Any, location: properties[4]
+    0x256e008181fd: [String] in OldSpace: #p5: 5 (const data field 5, attrs: [WEC]) @ Any, location: properties[5]
+    0x256e00818285: [String] in OldSpace: #p6: 6 (const data field 6, attrs: [WEC]) @ Any, location: properties[6]
+    0x256e008182bd: [String] in OldSpace: #p7: 7 (const data field 7, attrs: [WEC]) @ Any, location: properties[7]
+    0x256e008182f5: [String] in OldSpace: #p8: 8 (const data field 8, attrs: [WEC]) @ Any, location: properties[8]
+ }
+ - elements: 0x256e008840d5 <FixedDoubleArray[2]> {
+           0: 1.1
+           1: 2.2
+ }
+0x256e00818305: [Map] in OldSpace
+ - map: 0x256e00802db9 <MetaMap (0x256e00802e09 <NativeContext[302]>)>
+ - type: JS_ARRAY_TYPE
+ - instance size: 16
+ - inobject properties: 0
+ - unused property fields: 0
+ - elements kind: PACKED_DOUBLE_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x256e008182cd <Map[16](PACKED_DOUBLE_ELEMENTS)>
+ - prototype_validity_cell: 0x256e00803f85 <Cell value= [weak] 0x256e00802e09 <NativeContext[302]>>
+ - instance descriptors (own) #10: 0x256e00884011 <DescriptorArray[10]>
+ - prototype: 0x256e0080ae39 <JSArray[0]>
+ - constructor: 0x256e0080ad61 <JSFunction Array (sfi = 0x256e00066001)>
+ - dependent code: 0x256e000007cd <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+## buf
+DebugPrint: 0x256e008841f5: [JSArrayBuffer]
+ - map: 0x256e0080f271 <Map[56](HOLEY_ELEMENTS)> [FastProperties]
+ - prototype: 0x256e0080f411 <Object map = 0x256e0080f299>
+ - elements: 0x256e000007bd <FixedArray[0]> [HOLEY_ELEMENTS]
+ - cpp_heap_wrappable: 0
+ - backing_store: 0x3540003a340
+ - byte_length: 8
+ - max_byte_length: 8
+ - detach key: 0x256e00000011 <undefined>
+ - detachable
+ - properties: 0x256e000007bd <FixedArray[0]>
+ - All own properties (excluding elements): {}
+0x256e0080f271: [Map] in OldSpace
+ - map: 0x256e00802db9 <MetaMap (0x256e00802e09 <NativeContext[302]>)>
+ - type: JS_ARRAY_BUFFER_TYPE
+ - instance size: 56
+ - inobject properties: 0
+ - unused property fields: 0
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x256e00000011 <undefined>
+ - prototype_validity_cell: 0x256e00000ac9 <Cell value= [cleared]>
+ - instance descriptors (own) #0: 0x256e000007e5 <DescriptorArray[0]>
+ - prototype: 0x256e0080f411 <Object map = 0x256e0080f299>
+ - constructor: 0x256e0080f221 <JSFunction ArrayBuffer (sfi = 0x256e0006a681)>
+ - dependent code: 0x256e000007cd <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+## props 10
+DebugPrint: 0x256e00884245: [JSArray]
+ - map: 0x256e0081833d <Map[16](PACKED_DOUBLE_ELEMENTS)> [FastProperties]
+ - prototype: 0x256e0080ae39 <JSArray[0]>
+ - elements: 0x256e0088422d <FixedDoubleArray[2]> [PACKED_DOUBLE_ELEMENTS]
+ - length: 2
+ - properties: 0x256e00884401 <PropertyArray[12]>
+ - All own properties (excluding elements): {
+    0x256e00000df1: [String] in ReadOnlySpace: #length: 0x256e00036845 <AccessorInfo name= 0x256e00000df1 <String[6]: #length>, data= 0x256e00000011 <undefined>> (const accessor descriptor, attrs: [W__]), location: descriptor
+    0x256e00817f75: [String] in OldSpace: #p0: 0 (const data field 0, attrs: [WEC]) @ Any, location: properties[0]
+    0x256e00818021: [String] in OldSpace: #p1: 1 (const data field 1, attrs: [WEC]) @ Any, location: properties[1]
+    0x256e00818059: [String] in OldSpace: #p2: 2 (const data field 2, attrs: [WEC]) @ Any, location: properties[2]
+    0x256e00818091: [String] in OldSpace: #p3: 3 (const data field 3, attrs: [WEC]) @ Any, location: properties[3]
+    0x256e008180c9: [String] in OldSpace: #p4: 4 (const data field 4, attrs: [WEC]) @ Any, location: properties[4]
+    0x256e008181fd: [String] in OldSpace: #p5: 5 (const data field 5, attrs: [WEC]) @ Any, location: properties[5]
+    0x256e00818285: [String] in OldSpace: #p6: 6 (const data field 6, attrs: [WEC]) @ Any, location: properties[6]
+    0x256e008182bd: [String] in OldSpace: #p7: 7 (const data field 7, attrs: [WEC]) @ Any, location: properties[7]
+    0x256e008182f5: [String] in OldSpace: #p8: 8 (const data field 8, attrs: [WEC]) @ Any, location: properties[8]
+    0x256e0081832d: [String] in OldSpace: #p9: 9 (const data field 9, attrs: [WEC]) @ Any, location: properties[9]
+ }
+ - elements: 0x256e0088422d <FixedDoubleArray[2]> {
+           0: 1.1
+           1: 2.2
+ }
+0x256e0081833d: [Map] in OldSpace
+ - map: 0x256e00802db9 <MetaMap (0x256e00802e09 <NativeContext[302]>)>
+ - type: JS_ARRAY_TYPE
+ - instance size: 16
+ - inobject properties: 0
+ - unused property fields: 2
+ - elements kind: PACKED_DOUBLE_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x256e00818305 <Map[16](PACKED_DOUBLE_ELEMENTS)>
+ - prototype_validity_cell: 0x256e00803f85 <Cell value= [weak] 0x256e00802e09 <NativeContext[302]>>
+ - instance descriptors (own) #11: 0x256e0088435d <DescriptorArray[11]>
+ - prototype: 0x256e0080ae39 <JSArray[0]>
+ - constructor: 0x256e0080ad61 <JSFunction Array (sfi = 0x256e00066001)>
+ - dependent code: 0x256e000007cd <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+## buf
+DebugPrint: 0x256e00884439: [JSArrayBuffer]
+ - map: 0x256e0080f271 <Map[56](HOLEY_ELEMENTS)> [FastProperties]
+ - prototype: 0x256e0080f411 <Object map = 0x256e0080f299>
+ - elements: 0x256e000007bd <FixedArray[0]> [HOLEY_ELEMENTS]
+ - cpp_heap_wrappable: 0
+ - backing_store: 0x3540003a330
+ - byte_length: 8
+ - max_byte_length: 8
+ - detach key: 0x256e00000011 <undefined>
+ - detachable
+ - properties: 0x256e000007bd <FixedArray[0]>
+ - All own properties (excluding elements): {}
+0x256e0080f271: [Map] in OldSpace
+ - map: 0x256e00802db9 <MetaMap (0x256e00802e09 <NativeContext[302]>)>
+ - type: JS_ARRAY_BUFFER_TYPE
+ - instance size: 56
+ - inobject properties: 0
+ - unused property fields: 0
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x256e00000011 <undefined>
+ - prototype_validity_cell: 0x256e00000ac9 <Cell value= [cleared]>
+ - instance descriptors (own) #0: 0x256e000007e5 <DescriptorArray[0]>
+ - prototype: 0x256e0080f411 <Object map = 0x256e0080f299>
+ - constructor: 0x256e0080f221 <JSFunction ArrayBuffer (sfi = 0x256e0006a681)>
+ - dependent code: 0x256e000007cd <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+

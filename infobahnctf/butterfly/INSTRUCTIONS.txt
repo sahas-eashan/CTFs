@@ -1,0 +1,5 @@
+You can use the following command to send the payload to the server:
+
+cat payload.txt | nc the-butterfly-effect.challs.infobahnc.tf 1337
+
+This command will print the flag to the console.

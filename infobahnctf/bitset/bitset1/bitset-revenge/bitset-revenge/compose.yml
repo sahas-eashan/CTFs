@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    ports:
+      - "1919:1337"
+    environment:
+      - FLAG1='infobahn{fake_flag1}'
+      - FLAG2='infobahn{fake_flag2}'
+      - FLAG3='infobahn{fake_flag3}'
+
