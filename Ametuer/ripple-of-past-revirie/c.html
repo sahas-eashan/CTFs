@@ -1,0 +1,8 @@
+<script>
+// This will receive the cookie as a URL parameter from the inline script
+var params = new URLSearchParams(location.search);
+var cookie = params.get('c');
+console.log('Cookie received:', cookie);
+// Log it
+document.body.innerHTML = '<h1>Cookie: ' + cookie + '</h1>';
+</script>

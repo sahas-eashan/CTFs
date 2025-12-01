@@ -1,0 +1,66 @@
+===== Page 1 =====
+Title: division (AmateursCTF) Writeup
+
+We are given the Sage script:
+
+    flag = int.from_bytes(open('flag.txt','rb').read(),'big')
+    x = flag.bit_length()
+    r = random.getrandbits(x*3)
+    s = random.getrandbits(x*3) >> x*2 << x*2
+    p = random_prime(2^(x*3)-1, False, 2^(x*3-1))
+    c = (r*flag + s) % p
+
+s is aligned to 2^(2x), so
+
+    r*flag + (2^(2x))*t ≡ c (mod p)
+
+with 0 ≤ flag, t < 2^x.
+
+===== Page 2 =====
+We rewrite it as an exact Diophantine equation
+
+    r*flag + M*t – p*k = c,  with M = 2^(2x).
+
+All unknowns are < 2^x (~2^1135).
+
+1. Particular solution:
+       t = 0 ⇒ flag0 = c * r^{-1} (mod p)
+       k0 = (r*flag0 – c) / p
+
+2. Integer kernel of A = [r  M  –p]:
+       ker(A) gives two basis vectors v1, v2.
+       Use Sage’s LLL to reduce them (still ~1700-bit entries).
+
+===== Page 3 =====
+3. Closest vector (Babai rounding):
+
+       vec0 = (flag0, 0, k0)
+       Solve vec = vec0 + a*v1 + b*v2 with each coordinate in [0,2^x).
+       Using RealField(4096) to avoid precision loss, compute
+
+           coeff = (G^{-1}) * (-v_i ⋅ vec0)
+           a = round(coeff[0]); b = round(coeff[1])
+
+       The rounded coefficients already land us inside the bounds.
+
+4. Verify solution:
+       s = t * M
+       Check (r*flag + s) % p == c and decode flag.
+
+===== Page 4 =====
+Recovered data:
+
+flag = amateursCTF{the_flag_format_is_kinda_long_but_if_i_just_type_enough
+text_here_it_doesnt_matter_righttttttttttttttttttttttttttt_yeahh_probably}
+
+t = 82387387031040008663136708890761799633155635020668921429521206019716
+010345804318715480038541511191579352450386433932078259753403743793118057
+58097191219570774433295169347170882830224354171718122809609908639744810
+69901686964485486194097643262682187102750785583548078815794856760627160
+50839385858892528428238347528895885106837119429677133451590
+
+k = 20053403827671567595707114678416108338986663411062205316473546708781
+725239025099028435615690076900636948183628458714892470922218191846027239
+60487390780999474266802849684012717303964147568117164101159211757373558
+98751052006854338571494051445497813166127797276730311536633323924233201
+159409719339624754374727234533054155795243376193657092822523

@@ -1,0 +1,98 @@
+===============================================================================
+                           AmateursCTF - addition2
+===============================================================================
+
+Category: Cryptography
+Points: 469
+Author: helloperson
+
+--------------------------------------------------------------------------------
+Challenge Overview
+--------------------------------------------------------------------------------
+
+The server hides a 72-byte flag inside a 2048-bit RSA plaintext:
+
+    m = (flag << 256) + r
+
+where every query samples a fresh 256-bit random mask r and asks us to supply a
+`scramble` that is added before exponentiation with e = 3.  Unlike the original
+addition challenge, the list of 100k masked messages is regenerated on every
+request, so we cannot wait for collisions anymore.
+
+We are allowed unlimited queries, but the modulus n never changes.  The goal is
+to recover the unmasked flag bits after seeing only ciphertexts.
+
+--------------------------------------------------------------------------------
+Key Observations
+--------------------------------------------------------------------------------
+
+1. **Small mask differences.**  Since only the low 256 bits are random, the
+   difference between two plaintexts sampled with the same scramble satisfies
+   |m_i - m_j| < 2^256.  The corresponding difference of cubes
+   Δ = m_j^3 - m_i^3 therefore lies below 2^1922, well inside (-n/2, n/2).  By
+   lifting each ciphertext difference c_j - c_i into that symmetric interval we
+   obtain the exact integer Δ.
+
+2. **Rational structure.**  Writing δ_j = m_j - m_0 and letting
+   L_j = 3 m_0^2 + 3 m_0 δ_j + δ_j^2, we have:
+
+       Δ_j = δ_j * L_j.
+
+   Because |δ_j| << m_0, L_j is extremely close to 3 m_0^2.  Hence the ratio of
+   two Δ values reveals δ_j / δ_i to about 600 bits of precision, enough to
+   reconstruct the exact rational value using continued fractions.
+
+3. **Algebraic recovery.**  Let s = δ_j / δ_i and R = Δ_j / Δ_i (both rationals).
+   Eliminating δ_i with α = δ_i / m_0 turns the relation into:
+
+       (R/s - s^2) α^2 + 3 (R/s - s) α + 3 (R/s - 1) = 0.
+
+   The discriminant is always a perfect square, so α is rational and tiny.
+   Substituting back gives
+
+       m_0^3 = Δ_i / (α (3 + 3α + α^2)),
+
+   whose cube root is integral.  Shifting the result right by 256 bits yields
+   the flag.
+
+--------------------------------------------------------------------------------
+Exploit Strategy
+--------------------------------------------------------------------------------
+
+1. Query the server several times with scramble = 0 and record each ciphertext.
+2. Convert differences (c_k - c_0) into exact integers within (-n/2, n/2).
+3. For every pair of differences:
+     * Compute the ratio R and enumerate several `limit_denominator` bounds as
+       well as convergents of R to recover s = δ_j / δ_i.
+     * Solve the quadratic for α, filter |α| < 1, and deduce m_0.
+4. Once m_0 is known, extract the flag bits via `long_to_bytes(m_0 >> 256)`.
+
+This process succeeds with as few as three ciphertexts, but collecting five or
+six makes finding a good pair faster.
+
+--------------------------------------------------------------------------------
+Reference Solver
+--------------------------------------------------------------------------------
+
+The root-level script `solve_addition2.py` automates the entire attack.
+
+Usage (remote challenge):
+
+    python solve_addition2.py
+
+Self-test against locally generated parameters:
+
+    python solve_addition2.py --test
+
+The solver performs all arithmetic with Python `Fraction` objects, so it does
+not depend on floating-point precision and works deterministically.
+
+--------------------------------------------------------------------------------
+Flag
+--------------------------------------------------------------------------------
+
+Recovered with the script during competition:
+
+    amateursCTF{1_h0p3_you_didnT_qU3ry_Th3_s3RVer_100k_tim3s_1b9490c255fe83}
+
+===============================================================================

@@ -1,0 +1,23 @@
+floor-is-lava Writeup
+
+Challenge Overview:
+Binary: chal (ELF 64-bit PIE, stripped).
+Goal: move across the toroidal board with w/a/s/d without stepping on lava and recover the flag.
+Strings: success and failure messages plus the format amateursCTF{%s}.
+
+Reverse Engineering Highlights:
+1) Input loop (0x1210-0x135c) reads 28 moves, maps w/a/s/d to 0/1/2/3, updates wrap-around coordinates stored at 0x4050/0x4051, and XORs the current row byte at 0x4010+y with 1<<x after every step.
+2) Target board check (0x1366-0x13bc) regenerates eight row bytes by seeding srand with i*0x1337-0x21524111 and comparing rand()&0xff to the board rows, which means the XOR difference between initial rows [0x8b,0xc9,0x92,0x08,0xf9,0x91,0xd6,0xc8] and the RNG output marks the 28 cells you must toggle exactly once.
+3) Flag derivation (0x13c6-0x149b) compresses the 28 moves as base-4 digits, XORs the low and high dwords of that 56-bit number to build a seed, reseeds RNG, and XORs its bytes with the ciphertext at 0x4020 to produce the flag string shown via printf("amateursCTF{%s}").
+
+Solving Strategy:
+1) Reproduce the board logic and RNG targets to list the cells that need visiting.
+2) Treat the arena as an 8x8 torus and search (DFS) for a path starting at (0,0) that steps on each required cell once; the sequence found was dsddwwawddwddwwddsdddwdwdwwd.
+3) Use that move sequence to recompute the RNG seed (0xC300C830), XOR the ciphertext bytes [0xd6,0xb2,0x05,0x20,0x95,0x5b,0x1a,0xbe,0x4e,0x70,0x5f,0x60,0xf9,0x74,0x51,0xee,0x69,0x56,0x8c,0x6a,0xc1], and recover the plaintext key l4va_r3v_05f0d4ff51fb.
+
+Validation:
+Command: printf "dsddwwawddwddwwddsdddwdwdwwd\n" | ./chal
+Output: prints the success lines and the decrypted flag.
+
+Flag: amateursCTF{l4va_r3v_05f0d4ff51fb}
+

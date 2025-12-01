@@ -1,0 +1,24 @@
+[x] Opening connection to amt.rs on port 38639
+[x] Opening connection to amt.rs on port 38639: Trying 35.222.22.255
+[+] Opening connection to amt.rs on port 38639: Done
+[*] Connected! n=2048 bits, e=3
+[*] Starting with: amateursCTF{
+[*] 
+    [12/52] Byte 12...
+[*] Closed connection to amt.rs port 38639
+Traceback (most recent call last):
+  File "C:\Users\Cyborg\Documents\GitHub\CTFs\Ametuer\addition3\solve_fresh_instance.py", line 156, in <module>
+    flag = solve()
+  File "C:\Users\Cyborg\Documents\GitHub\CTFs\Ametuer\addition3\solve_fresh_instance.py", line 119, in solve
+    log.info(f"  Testing '{char_display}'... ", end='')
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cyborg\AppData\Roaming\Python\Python313\site-packages\pwnlib\log.py", line 396, in info
+    self._log(logging.INFO, message, args, kwargs, 'info')
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cyborg\AppData\Roaming\Python\Python313\site-packages\pwnlib\log.py", line 299, in _log
+    self._logger.log(level, msg, *args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\logging\__init__.py", line 1592, in log
+    self._log(level, msg, args, **kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Logger._log() got an unexpected keyword argument 'end'

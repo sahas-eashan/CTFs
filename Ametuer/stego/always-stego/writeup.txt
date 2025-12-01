@@ -1,0 +1,76 @@
+Here’s a short writeup you can drop into a repo / notes.
+
+---
+
+## misc / always-stego – Writeup
+
+**Category:** Misc / Stego
+**Files:** `output.png` (inside `always-stego.tar.gz`)
+**Flag:** `amateursCTF{fr3quency_analys1s_ftw_7975491d}`
+
+---
+
+### Challenge recap
+
+> *why is it always stego? it's so **frequently** stego that **even** i just hate it all-**redy***
+> *Hint: It is not any type of standard stego, but the flavortext hints apply. Random jpeg compression artifacts are just noise and shouldn't be visually interpreted.*
+
+So:
+
+* **frequently** → use **frequencies** (histogram)
+* **even** → something with **even** values
+* **all-redy** → **red** channel
+* “don’t visually interpret artifacts” → ignore pixels/shapes; look at numbers only.
+
+---
+
+### Initial inspection
+
+* `output.png` looked like a normal image; no visible text.
+* Standard tools (steghide, exif, LSB viewing, zsteg, etc.) didn’t give anything.
+* That matches the hint: *not any type of standard stego*.
+
+So we focus on the **red channel histogram**.
+
+---
+
+### Core idea
+
+1. Take the **red channel**.
+2. Compute how **frequently** each value 0–255 appears.
+3. Consider only the **even** indices (0, 2, 4, …, 254).
+4. Use the **least significant byte** of each even-bin count as data.
+
+This directly follows the three bold words.
+
+---
+
+### Extraction
+
+```python
+from PIL import Image
+import numpy as np
+
+img  = Image.open("output.png")
+red  = np.array(img)[:, :, 0].flatten()           # red channel
+hist = np.bincount(red, minlength=256)           # frequencies
+
+even_bins = hist[::2]                            # 0,2,4,...,254
+bs = bytes(int(c) & 0xFF for c in even_bins)     # low 8 bits of each count
+
+print(bs.decode("latin-1"))
+```
+
+Output:
+
+```text
+... ?$¿amateursCTF{fr3quency_analys1s_ftw_7975491d}ZàÐØú...
+```
+
+The random junk before/after is just unused bytes; the flag is cleanly embedded in the middle.
+
+---
+
+### Flag
+
+`amateursCTF{fr3quency_analys1s_ftw_7975491d}` ✅

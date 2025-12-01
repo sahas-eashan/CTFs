@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'nonce-abc'; style-src 'nonce-abc'; img-src 'self'; font-src https://fonts.googleapis.com https://fonts.gstatic.com; frame-ancestors 'none'; base-uri 'none'; form-action 'self';">
+<title>Test</title>
+<style nonce="abc">body{font-family:sans-serif;}</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg">
+  <a xlink:href="javascript:console.log('FIRED')">
+    <rect width="100" height="100" fill="red"></rect>
+  </a>
+  <animate attributeName="xlink:href" values="javascript:console.log('ANIM FIRED')" begin="0s" dur="0.1s"></animate>
+</svg>
+</body>
+</html>

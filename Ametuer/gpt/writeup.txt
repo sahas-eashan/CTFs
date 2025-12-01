@@ -1,0 +1,47 @@
+Challenge: Base64 Padding Steganography
+Observation: The challenge provided a file (chall.txt) containing multiple lines of Base64 encoded text. When decoded, the text was a history of ChatGPT but contained odd typos (e.g., GPU-5 instead of GPT-4, ChatGXT instead of ChatGPT).
+
+Technical Analysis: This is a classic Base64 Padding Steganography challenge.
+
+In Base64, characters represent 6-bit values.
+
+When the source data isn't divisible by 3 bytes, padding (= or ==) is added.
+
+The character immediately before the padding contains unused bits (slack space).
+
+= padding leaves 2 unused bits in the preceding character.
+
+== padding leaves 4 unused bits in the preceding character.
+
+The "typos" were created by manipulating these unused bits to store the flag binary data, which changes the Base64 character but often decoding libraries ignore these bits, resulting in valid (though slightly altered) text.
+
+Solution: We wrote a script to iterate through the Base64 lines, check for padding, and extract the hidden bits from the character immediately preceding the = signs.
+
+Solver Script (Python):
+
+Python
+
+import base64
+
+# Join the bits extracted from the slack space
+binary_flag = ""
+b64_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+
+with open('chall.txt', 'r') as f:
+    for line in f:
+        line = line.strip()
+        if not line or '[' in line: continue
+        
+        if line.endswith('=='):
+            # 4 bits hidden
+            val = b64_chars.index(line[-3])
+            binary_flag += format(val, '06b')[-4:]
+        elif line.endswith('='):
+            # 2 bits hidden
+            val = b64_chars.index(line[-2])
+            binary_flag += format(val, '06b')[-2:]
+
+# Convert binary to ASCII
+flag = "".join([chr(int(binary_flag[i:i+8], 2)) for i in range(0, len(binary_flag), 8)])
+print(flag)
+Flag: amateursCTF{3v3ryth1ng_c4n_b3_st3go}

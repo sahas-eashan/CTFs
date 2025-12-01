@@ -1,0 +1,32 @@
+Normal Java Code - amateursctf{polynomials_are_cool}
+===================================================
+
+Challenge Summary
+-----------------
+The binary or source provided with the challenge was a lone Main.class compiled with Java 1.5 bytecode. Running it normally (java Main) failed because the verifier did not like the mangled stack, but hint text suggested the real program had been running since 2004, so we could work with the bytecode as-is.
+
+Initial Recon
+-------------
+I decompiled the class with javap -c Main and javap -v Main, which produced a 700+ instruction disassembly riddled with massive ldc2_w sequences that push different long constants. Running with java -noverify Main printed the banner and then appeared to hang forever after mateursctf{, confirming the tail of the flag still had to be extracted.
+
+Observations
+------------
+Near offsets 1692?1811 the bytecode drops into dozens of nested loops that repeatedly push candidate integers, convert them to longs, and perform long addition/subtraction while testing for zero. Those loops clearly try every printable ASCII candidate for remaining flag characters, but they do it with extremely slow arithmetic, so letting the JVM finish would take ages.
+
+Approach
+--------
+Instead of fighting the verifier or waiting, I emulated the bytecode myself:
+1. Saved the javap -c output to disasm.txt for easier parsing.
+2. Wrote solve.py (Python 3) that reads the disassembly, builds an instruction table, and simulates the JVM operand stack plus locals. The emulator covers the opcodes used (ldc, ldc2_w, istore/iload, long arithmetic, comparisons, and invokevirtual for printing).
+3. Added a shortcut for the hot polynomial block (instructions 1712?1762). Rather than allowing thousands of redundant stack operations, _handle_poly_block emulates the math directly by multiplying the candidate x value pairs once per iteration.
+4. Ran python3 solve.py, which executes the whole bytecode quickly and prints the remaining characters.
+
+Result
+------
+The emulator reproduced the program output immediately:
+
+`
+amateursctf{polynomials_are_cool}
+`
+
+This matches the expected flag format mateursctf{...} (lowercase wrapper).

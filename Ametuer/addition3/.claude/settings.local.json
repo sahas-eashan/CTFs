@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/Cyborg/Documents/GitHub/CTFs/Ametuer/addition2/**)",
+      "Read(//c/Users/Cyborg/Documents/GitHub/CTFs/Ametuer/**)",
+      "Read(//c/Users/Cyborg/Documents/GitHub/CTFs/**)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(timeout 60 python:*)",
+      "Bash(timeout 90 python:*)",
+      "Bash(timeout 120 python:*)",
+      "Bash(timeout 600 python solve_final.py)",
+      "Bash(tee:*)",
+      "Bash(timeout:*)",
+      "Bash(wsl which:*)",
+      "Bash(wsl ls:*)",
+      "Bash(wsl bash:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

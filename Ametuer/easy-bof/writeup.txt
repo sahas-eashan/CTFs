@@ -1,0 +1,25 @@
+PAGE 1 | OVERVIEW
+| Challenge: easy-bof (amateursCTF) provides a minimal amd64 binary with a fixed-size stack 
+buffer and a helper `win()` function that spawns `sh`.
+| Remote Service: nc amt.rs 30382
+| Goal: trigger the overflow, redirect execution into `win()`, and read `/srv/app/flag`.
+|
+
+
+PAGE 2 | VULNERABILITY + EXPLOIT
+| 1. Program reads an arbitrary size with `scanf`, then feeds it directly to `fgets` 
+targeting a 0x100-byte stack buffer (no canary, NX on, PIE off).
+| 2. Overflow layout: 256 bytes buffer + 8 bytes saved RBP = 264-byte offset to RIP.
+| 3. Payload: `b"A"*264 + ret_gadget + win_addr` where `ret_gadget = 0x40101a` keeps 
+stack alignment and `win_addr = 0x401176`.
+| 4. Steps with pwntools: send size "1000", send payload, wait for shell.
+|
+
+
+PAGE 3 | FLAG + NOTES
+| Shell command: `cat flag` (or `/srv/app/flag` inside jail) after payload lands in 
+`win()`.
+| Flag Obtained: amateursCTF{some_easy_bof_for_you}
+| Extra: add `ls`/`pwd` when debugging remotely; local binary mirrors remote environment 
+
+thanks to provided Dockerfile.

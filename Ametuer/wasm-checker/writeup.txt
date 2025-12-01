@@ -1,0 +1,45 @@
+This is a classic reverse engineering challenge involving WebAssembly (WASM). We solved it by decompiling the binary and using the Z3 theorem prover to automate the constraint solving.
+
+Challenge Overview
+Challenge Name: wasm-checker
+
+Category: Reverse Engineering / WebAssembly
+
+Objective: Find the correct flag input that satisfies the conditions in module.wasm.
+
+Step 1: Analysis
+The challenge provided a main.mjs wrapper and a module.wasm binary. The wrapper script revealed the input mechanism:
+
+It takes a user input (flag).
+
+It writes the flag's ASCII bytes directly into the WASM memory at index 0.
+
+It calls the exported function check().
+
+It requires the flag length to be exactly 43 characters.
+
+Step 2: Decompilation
+We used wasm2wat to convert the binary into a readable text format:
+
+Bash
+
+wasm2wat module.wasm -o module.wat
+The decompiled code revealed a "stack machine" architecture. The check function loaded specific characters from memory (e.g., i32.load8_u offset=6), performed complex arithmetic (XOR, ADD, MUL), and compared the results against hardcoded integers.
+
+Step 3: Automating the Solve (Z3)
+Instead of manually reversing hundreds of arithmetic operations, we parsed the .wat file directly into a Z3 solver script.
+
+Variables: We initialized 43 8-bit BitVec variables to represent the flag characters.
+
+Constraints: We iterated through the WASM instructions in Python.
+
+Instructions like i32.add or i32.xor were replicated using Z3 operators.
+
+The i32.ne (not equal) checks followed by if ... return 0 blocks were treated as equality constraints (asserting that the calculated value must equal the expected value).
+
+Execution: The script simulated the stack operations and fed the resulting equations into the solver.
+
+Solution
+The solver successfully found a model satisfying all mathematical constraints, outputting the flag:
+
+Flag: amateursCTF{w4sm_and_s4t_s0lv3r5_4r3_c00l!}

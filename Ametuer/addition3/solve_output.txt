@@ -1,0 +1,18 @@
+[x] Opening connection to amt.rs on port 38787
+[x] Opening connection to amt.rs on port 38787: Trying 35.222.22.255
+[ERROR] Could not connect to amt.rs on port 38787
+[-] Opening connection to amt.rs on port 38787: Failed
+Traceback (most recent call last):
+  File "C:\Users\Cyborg\Documents\GitHub\CTFs\Ametuer\addition3\solve_final.py", line 244, in <module>
+    flag = solve_remote()
+  File "C:\Users\Cyborg\Documents\GitHub\CTFs\Ametuer\addition3\solve_final.py", line 81, in solve_remote
+    io = remote(host, port)
+  File "C:\Users\Cyborg\AppData\Roaming\Python\Python313\site-packages\pwnlib\tubes\remote.py", line 85, in __init__
+    self.sock   = self._connect(fam, typ)
+                  ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Cyborg\AppData\Roaming\Python\Python313\site-packages\pwnlib\tubes\remote.py", line 136, in _connect
+    self.error("Could not connect to %s on port %s", self.rhost, self.rport)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cyborg\AppData\Roaming\Python\Python313\site-packages\pwnlib\log.py", line 439, in error
+    raise PwnlibException(message % args)
+pwnlib.exception.PwnlibException: Could not connect to amt.rs on port 38787

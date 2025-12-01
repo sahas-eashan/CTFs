@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(checksec:*)",
+      "Bash(python:*)",
+      "Bash(timeout:*)",
+      "Bash(objdump:*)",
+      "Bash(xxd:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

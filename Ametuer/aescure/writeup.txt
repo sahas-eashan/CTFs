@@ -1,0 +1,23 @@
+Challenge: crypto/aescureThe Challenge:We are given a Python script that uses the flag as an AES key to encrypt 16 null bytes (\x00 * 16). We are provided the resulting ciphertext hex.The Insight:AES.new throws an error if the key length is not exactly 16, 24, or 32 bytes.The flag format is amateursCTF{...}.The known prefix amateursCTF{ is 12 bytes.The suffix } is 1 byte.To form a valid 16-byte AES-128 key, the missing content inside the brackets must be exactly 3 characters ($16 - 12 - 1 = 3$).The Solution:Since 3 characters is a tiny search space ($~95^3$ possibilities), we can brute-force the missing characters until the encryption output matches the provided ciphertext.Solver Script:Pythonfrom Crypto.Cipher import AES
+from itertools import product
+import string
+
+target_ct = bytes.fromhex("5aed095b21675ec4ceb770994289f72b")
+pt = b'\x00' * 16
+
+# We need 3 chars to reach 16 bytes (AES-128)
+# amateursCTF{ (12) + ??? (3) + } (1) = 16
+print("Brute-forcing...")
+
+for chars in product(string.printable.strip(), repeat=3):
+    guess = "".join(chars)
+    key = f"amateursCTF{{{guess}}}".encode()
+    
+    try:
+        cipher = AES.new(key, AES.MODE_ECB)
+        if cipher.encrypt(pt) == target_ct:
+            print(f"Flag found: {key.decode()}")
+            break
+    except ValueError:
+        continue
+Flag:amateursCTF{@3s}

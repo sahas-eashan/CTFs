@@ -1,0 +1,20 @@
+from pwn import *
+
+elf = ELF('chal')
+print('Arch:', elf.arch)
+print('Bits:', elf.bits)
+print('PIE:', elf.pie)
+print('NX:', elf.nx)
+print('Canary:', elf.canary)
+print('RELRO:', elf.relro)
+print('Entry:', hex(elf.entry))
+print('Symbols:', list(elf.symbols.keys())[:20])
+
+print('Useful gadgets maybe?')
+rop = ROP(elf)
+print('syscall gadgets count', len([g for g in rop.gadgets if 'syscall' in g.insns]))
+print('pop rdi;', rop.find_gadget(['pop rdi','ret']))
+print('pop rsi;', rop.find_gadget(['pop rsi','ret']))
+print('pop rdx;', rop.find_gadget(['pop rdx','ret']))
+print('pop rax;', rop.find_gadget(['pop rax','ret']))
+print('ret;', rop.find_gadget(['ret']))

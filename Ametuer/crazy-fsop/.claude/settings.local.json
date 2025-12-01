@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(checksec:*)",
+      "Bash(pwn checksec:*)",
+      "Bash(cat:*)",
+      "Bash(python3:*)",
+      "Bash(python:*)",
+      "Bash(readelf:*)",
+      "Bash(nm chal:*)",
+      "Bash(objdump:*)",
+      "Bash(chmod:*)",
+      "Bash(timeout:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

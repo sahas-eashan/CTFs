@@ -1,0 +1,129 @@
+[*] Starting statistical solver...
+[*] Using 500 samples per guess
+[*] Starting with prefix: amateursCTF{
+[*] 
+    [12/52] Searching byte 12...
+[*]   Testing '_'...
+[*]   Progress: 50/500, cubes found: 0
+[*]   Progress: 100/500, cubes found: 0
+[!] Query failed: 
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077
+[ERROR] Could not connect to amt.rs on port 35077
+[!] Query failed: Could not connect to amt.rs on port 35077

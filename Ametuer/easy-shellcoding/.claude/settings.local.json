@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tar:*)",
+      "Bash(python3:*)",
+      "Bash(python:*)",
+      "Bash(timeout:*)",
+      "Bash(curl:*)",
+      "Bash(sh -s s.AAAACg==.fmlilaWk23M1E+/JRbxYMw==)",
+      "Bash(wget:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

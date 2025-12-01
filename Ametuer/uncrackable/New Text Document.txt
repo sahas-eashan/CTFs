@@ -1,0 +1,48 @@
+This is a crypto challenge that demonstrates how a small keystream period combined with a known-plaintext leak (caused by strip()) can completely break a stream cipher.
+
+Challenge Overview
+Challenge Name: uncrackable
+
+Category: Cryptography
+
+Points: 408
+
+Objective: Decrypt the flag from out.txt by recovering the keystream state.
+
+Step 1: Analysis
+The encryption script chall.py implements a custom stream cipher with two critical flaws:
+
+
+Small Period: The internal state is initialized with a SHA-256 digest (32 bytes). The stream.next() function simply rotates this state byte-by-byte and increments the rotated byte by 1. This means the keystream repeats every 32 bytes (with a predictable +1 shift each cycle).
+
+
+Side-Channel Leak: The encryption function performs x.strip() on random 2-byte chunks before encrypting them.
+
+
+strip() removes leading/trailing whitespace (bytes like space, tab, newline).
+
+This guarantees that the plaintext bytes for the random data section cannot be whitespace characters (ASCII 9-13, 32).
+
+Step 2: The Attack (Known Plaintext Constraint)
+Since the keystream repeats every 32 bytes, we can split the ciphertext into 32 "lanes". All bytes in "Lane 0" are encrypted by State[0], State[0]+1, State[0]+2, etc.
+
+We don't need to brute-force the original 8-byte seed. We can brute-force the 32-byte Initial State directly using the whitespace constraint.
+
+Algorithm:
+
+Divide the ciphertext out.txt into 32 lanes based on index % 32.
+
+For each lane (representing one byte of the Initial State), try all 256 possible values.
+
+Decrypt the data in that lane using the guessed byte.
+
+Check: If the decrypted plaintext contains any "whitespace" characters, the guess is invalid (because strip() would have removed them).
+
+With ~20,000 bytes of data, this eliminates all incorrect guesses, leaving only the true state byte.
+
+Step 3: Solution Code
+We wrote a solver script that implements this attack. It recovered the state byte-by-byte and then decrypted the flag at the end of the stream.
+
+Recovered State: e9b5988d71349d4128dd395de7d528eeebc4c2095907c894c4d6e375e11c99cd
+
+Flag: amateursCTF{the_r4nd0m_data_isnT_s0_R4nd0m_hUh_8d7ac2d8e8d3}

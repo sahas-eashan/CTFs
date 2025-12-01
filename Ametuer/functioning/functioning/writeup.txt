@@ -1,0 +1,30 @@
+Functioning Challenge Writeup
+
+Challenge Overview:
+The challenge shippped a single file named chal.js. It is a labyrinth of tiny 
+helper combinators labeled a through K, and the program only prints “yes!” when 
+run with a 48 byte argument that satisfies the huge expression assigned to J. 
+Every helper is a short arithmetic primitive, so the entire file behaves like 
+a poor man’s lambda calculus machine.
+
+Strategy:
+1. Dump the abstract syntax tree of the arrow function assigned to J.
+ I used acorn and acorn-walk to build extract_ast.js which writes the subtree into 
+ J_ast.json. Having the AST once lets us analyze the expression offline.
+2. Recreate the semantics with a symbolic interpreter in Python. The solver in
+ solve.py reimplements each helper (byte and word subtraction, comparisons, recursion via
+  ternary function f, charCodeAt lookups, etc.) using Z3 bit vectors. Each input byte becomes
+   a symbolic variable constrained to printable ASCII.
+3. Evaluate the AST inside the interpreter, translate all branching into Z3 
+If expressions, and finally ask Z3 to find any model where the result of J is not zero.
+4. Validate the recovered candidate string by running node --stack_size=1000000 chal.js 
+"amateursCTF{po0r_m4ns_lambd4_c4lculus_45b538a09}" which prints “yes!” proving the solver
+ is correct.
+
+Reproduction Steps:
+- node extract_ast.js
+- python solve.py
+- node --stack_size=1000000 chal.js "amateursCTF{po0r_m4ns_lambd4_c4lculus_45b538a09}"
+
+Flag:
+amateursCTF{po0r_m4ns_lambd4_c4lculus_45b538a09}

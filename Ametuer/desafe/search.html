@@ -1,0 +1,642 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--[if IE 6]><html class="ie6" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if IE 7]><html class="lt-ie8 lt-ie9" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if gt IE 8]><!--><html xmlns="http://www.w3.org/1999/xhtml"><!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=1" />
+  <meta name="referrer" content="origin" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>devalue prototype pollution at DuckDuckGo</title>
+  <link title="DuckDuckGo (HTML)" type="application/opensearchdescription+xml" rel="search" href="//duckduckgo.com/opensearch_html_v2.xml" />
+  <link href="//duckduckgo.com/favicon.ico" rel="shortcut icon" />
+  <link rel="icon" href="//duckduckgo.com/favicon.ico" type="image/x-icon" />
+  <link id="icon60" rel="apple-touch-icon" href="//duckduckgo.com/assets/icons/meta/DDG-iOS-icon_60x60.png?v=2"/>
+  <link id="icon76" rel="apple-touch-icon" sizes="76x76" href="//duckduckgo.com/assets/icons/meta/DDG-iOS-icon_76x76.png?v=2"/>
+  <link id="icon120" rel="apple-touch-icon" sizes="120x120" href="//duckduckgo.com/assets/icons/meta/DDG-iOS-icon_120x120.png?v=2"/>
+  <link id="icon152" rel="apple-touch-icon" sizes="152x152" href="//duckduckgo.com/assets/icons/meta/DDG-iOS-icon_152x152.png?v=2"/>
+  <link rel="image_src" href="//duckduckgo.com/assets/icons/meta/DDG-icon_256x256.png">
+  <link rel="stylesheet" media="handheld, all" href="//duckduckgo.com/dist/h.094067438196160ebd4c.css" type="text/css"/>
+</head>
+
+<body class="body--html">
+  <a name="top" id="top"></a>
+
+  <form action="/html/" method="post">
+    <input type="text" name="state_hidden" id="state_hidden" />
+  </form>
+
+  <div>
+    <div class="site-wrapper-border"></div>
+
+    <div id="header" class="header cw header--html">
+      <a title="DuckDuckGo" href="/html/" class="header__logo-wrap"></a>
+
+      <form name="x" class="header__form" action="/html/" method="post">
+        <div class="search search--header">
+          <input name="q" autocomplete="off" class="search__input" id="search_form_input_homepage" type="text" value="devalue prototype pollution" />
+          <input name="b" id="search_button_homepage" class="search__button search__button--html" value="" title="Search" alt="Search" type="submit" />
+        </div>
+
+        
+        
+        
+        
+
+        <div class="frm__select">
+          <select name="kl">
+            
+              <option value="" >All Regions</option>
+            
+              <option value="ar-es" >Argentina</option>
+            
+              <option value="au-en" >Australia</option>
+            
+              <option value="at-de" >Austria</option>
+            
+              <option value="be-fr" >Belgium (fr)</option>
+            
+              <option value="be-nl" >Belgium (nl)</option>
+            
+              <option value="br-pt" >Brazil</option>
+            
+              <option value="bg-bg" >Bulgaria</option>
+            
+              <option value="ca-en" >Canada (en)</option>
+            
+              <option value="ca-fr" >Canada (fr)</option>
+            
+              <option value="ct-ca" >Catalonia</option>
+            
+              <option value="cl-es" >Chile</option>
+            
+              <option value="cn-zh" >China</option>
+            
+              <option value="co-es" >Colombia</option>
+            
+              <option value="hr-hr" >Croatia</option>
+            
+              <option value="cz-cs" >Czech Republic</option>
+            
+              <option value="dk-da" >Denmark</option>
+            
+              <option value="ee-et" >Estonia</option>
+            
+              <option value="fi-fi" >Finland</option>
+            
+              <option value="fr-fr" >France</option>
+            
+              <option value="de-de" >Germany</option>
+            
+              <option value="gr-el" >Greece</option>
+            
+              <option value="hk-tzh" >Hong Kong</option>
+            
+              <option value="hu-hu" >Hungary</option>
+            
+              <option value="is-is" >Iceland</option>
+            
+              <option value="in-en" >India (en)</option>
+            
+              <option value="id-en" >Indonesia (en)</option>
+            
+              <option value="ie-en" >Ireland</option>
+            
+              <option value="il-en" >Israel (en)</option>
+            
+              <option value="it-it" >Italy</option>
+            
+              <option value="jp-jp" >Japan</option>
+            
+              <option value="kr-kr" >Korea</option>
+            
+              <option value="lv-lv" >Latvia</option>
+            
+              <option value="lt-lt" >Lithuania</option>
+            
+              <option value="my-en" >Malaysia (en)</option>
+            
+              <option value="mx-es" >Mexico</option>
+            
+              <option value="nl-nl" >Netherlands</option>
+            
+              <option value="nz-en" >New Zealand</option>
+            
+              <option value="no-no" >Norway</option>
+            
+              <option value="pk-en" >Pakistan (en)</option>
+            
+              <option value="pe-es" >Peru</option>
+            
+              <option value="ph-en" >Philippines (en)</option>
+            
+              <option value="pl-pl" >Poland</option>
+            
+              <option value="pt-pt" >Portugal</option>
+            
+              <option value="ro-ro" >Romania</option>
+            
+              <option value="ru-ru" >Russia</option>
+            
+              <option value="xa-ar" >Saudi Arabia</option>
+            
+              <option value="sg-en" >Singapore</option>
+            
+              <option value="sk-sk" >Slovakia</option>
+            
+              <option value="sl-sl" >Slovenia</option>
+            
+              <option value="za-en" >South Africa</option>
+            
+              <option value="es-ca" >Spain (ca)</option>
+            
+              <option value="es-es" >Spain (es)</option>
+            
+              <option value="se-sv" >Sweden</option>
+            
+              <option value="ch-de" >Switzerland (de)</option>
+            
+              <option value="ch-fr" >Switzerland (fr)</option>
+            
+              <option value="tw-tzh" >Taiwan</option>
+            
+              <option value="th-en" >Thailand (en)</option>
+            
+              <option value="tr-tr" >Turkey</option>
+            
+              <option value="us-en" >US (English)</option>
+            
+              <option value="us-es" >US (Spanish)</option>
+            
+              <option value="ua-uk" >Ukraine</option>
+            
+              <option value="uk-en" >United Kingdom</option>
+            
+              <option value="vn-en" >Vietnam (en)</option>
+            
+          </select>
+        </div>
+
+        <div class="frm__select frm__select--last">
+          <select class="" name="df">
+            
+              <option value="" selected>Any Time</option>
+            
+              <option value="d" >Past Day</option>
+            
+              <option value="w" >Past Week</option>
+            
+              <option value="m" >Past Month</option>
+            
+              <option value="y" >Past Year</option>
+            
+          </select>
+        </div>
+      </form>
+    </div>
+
+    
+
+    
+      <!-- Web results are present -->
+      <div>
+        <div class="serp__results">
+          <div id="links" class="results">
+            
+
+            
+              
+                <div class="result results_links results_links_deep web-result ">
+                  <div class="links_main links_deep result__body"> <!-- This is the visible part -->
+                    
+                      <h2 class="result__title">
+                        <a rel="nofollow" class="result__a" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fgithub.com%2Fadvisories%2FGHSA%2Dvj54%2D72f3%2Dp5jv&amp;rut=19721ee1eb7451ad7f17e159a89bdd83c2cbe4699fc645089f4d337f15902d34">devalue prototype pollution vulnerability · CVE-2025-57820 - GitHub</a>
+                      </h2>
+
+                    
+
+                    
+                      <div class="result__extras">
+                        <div class="result__extras__url">
+                          <span class="result__icon">
+                            <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fgithub.com%2Fadvisories%2FGHSA%2Dvj54%2D72f3%2Dp5jv&amp;rut=19721ee1eb7451ad7f17e159a89bdd83c2cbe4699fc645089f4d337f15902d34">
+                              <img class="result__icon__img" width="16" height="16" alt="" src="//external-content.duckduckgo.com/ip3/github.com.ico" name="i15" />
+                            </a>
+                          </span>
+                          <a class="result__url" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fgithub.com%2Fadvisories%2FGHSA%2Dvj54%2D72f3%2Dp5jv&amp;rut=19721ee1eb7451ad7f17e159a89bdd83c2cbe4699fc645089f4d337f15902d34">
+                            github.com/advisories/GHSA-vj54-72f3-p5jv
+                          </a>
+                          
+                            <span>&nbsp; &nbsp; 2025-08-26T00:00:00.0000000</span>
+                          
+                        </div>
+                      </div>
+                    
+
+                    
+                      
+                        <a class="result__snippet" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fgithub.com%2Fadvisories%2FGHSA%2Dvj54%2D72f3%2Dp5jv&amp;rut=19721ee1eb7451ad7f17e159a89bdd83c2cbe4699fc645089f4d337f15902d34">1. <b>devalue</b>.parse allows __proto__ to be set A string passed to <b>devalue</b>.parse could represent an object with a __proto__ property, which would assign a <b>prototype</b> to an object while allowing properties to be overwritten:</a>
+                      
+                    
+
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              
+            
+              
+                <div class="result results_links results_links_deep web-result ">
+                  <div class="links_main links_deep result__body"> <!-- This is the visible part -->
+                    
+                      <h2 class="result__title">
+                        <a rel="nofollow" class="result__a" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fsecurity.snyk.io%2Fvuln%2FSNYK%2DJS%2DDEVALUE%2D12205530&amp;rut=778a5889790d0175116a606709a5cf65d77e48dbaef9c8217c04361e93c663e9">Prototype Pollution in devalue | CVE-2025-57820 | Snyk</a>
+                      </h2>
+
+                    
+
+                    
+                      <div class="result__extras">
+                        <div class="result__extras__url">
+                          <span class="result__icon">
+                            <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fsecurity.snyk.io%2Fvuln%2FSNYK%2DJS%2DDEVALUE%2D12205530&amp;rut=778a5889790d0175116a606709a5cf65d77e48dbaef9c8217c04361e93c663e9">
+                              <img class="result__icon__img" width="16" height="16" alt="" src="//external-content.duckduckgo.com/ip3/security.snyk.io.ico" name="i15" />
+                            </a>
+                          </span>
+                          <a class="result__url" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fsecurity.snyk.io%2Fvuln%2FSNYK%2DJS%2DDEVALUE%2D12205530&amp;rut=778a5889790d0175116a606709a5cf65d77e48dbaef9c8217c04361e93c663e9">
+                            security.snyk.io/vuln/SNYK-JS-DEVALUE-12205530
+                          </a>
+                          
+                            <span>&nbsp; &nbsp; 2025-08-26T00:00:00.0000000</span>
+                          
+                        </div>
+                      </div>
+                    
+
+                    
+                      
+                        <a class="result__snippet" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fsecurity.snyk.io%2Fvuln%2FSNYK%2DJS%2DDEVALUE%2D12205530&amp;rut=778a5889790d0175116a606709a5cf65d77e48dbaef9c8217c04361e93c663e9"><b>devalue</b> is a JSON.stringify, but handles cyclical references, repeated references, undefined, regular expressions, dates, Map and Set. Affected versions of this package are vulnerable to <b>Prototype</b> <b>Pollution</b> via the parse function. An attacker can manipulate object <b>prototypes</b> or assign array <b>prototype</b> methods to object properties by crafting malicious payloads, potentially leading to property ...</a>
+                      
+                    
+
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              
+            
+              
+                <div class="result results_links results_links_deep web-result ">
+                  <div class="links_main links_deep result__body"> <!-- This is the visible part -->
+                    
+                      <h2 class="result__title">
+                        <a rel="nofollow" class="result__a" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fcybrwolf.com%2Fblog%2Fcve%2D2025%2D57820%2F&amp;rut=ecca705adfc3457d756c1d07604508a247a84753d9110eee37f31f731e1b5043">CVE-2025-57820 Prototype Pollution in devalue | CybrWolf</a>
+                      </h2>
+
+                    
+
+                    
+                      <div class="result__extras">
+                        <div class="result__extras__url">
+                          <span class="result__icon">
+                            <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fcybrwolf.com%2Fblog%2Fcve%2D2025%2D57820%2F&amp;rut=ecca705adfc3457d756c1d07604508a247a84753d9110eee37f31f731e1b5043">
+                              <img class="result__icon__img" width="16" height="16" alt="" src="//external-content.duckduckgo.com/ip3/cybrwolf.com.ico" name="i15" />
+                            </a>
+                          </span>
+                          <a class="result__url" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fcybrwolf.com%2Fblog%2Fcve%2D2025%2D57820%2F&amp;rut=ecca705adfc3457d756c1d07604508a247a84753d9110eee37f31f731e1b5043">
+                            cybrwolf.com/blog/cve-2025-57820/
+                          </a>
+                          
+                        </div>
+                      </div>
+                    
+
+                    
+                      
+                        <a class="result__snippet" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fcybrwolf.com%2Fblog%2Fcve%2D2025%2D57820%2F&amp;rut=ecca705adfc3457d756c1d07604508a247a84753d9110eee37f31f731e1b5043">CVE-2025-57820 is a high-severity <b>prototype</b> <b>pollution</b> vulnerability in the Svelte <b>devalue</b> library (versions before 5.3.2). A crafted input to <b>devalue</b>.parse can modify object <b>prototypes</b> by exploiting unchecked __proto__ properties, leading to serious application-level risks.</a>
+                      
+                    
+
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              
+            
+              
+                <div class="result results_links results_links_deep web-result ">
+                  <div class="links_main links_deep result__body"> <!-- This is the visible part -->
+                    
+                      <h2 class="result__title">
+                        <a rel="nofollow" class="result__a" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fnvd.nist.gov%2Fvuln%2Fdetail%2FCVE%2D2025%2D57820&amp;rut=a1be05f55800c389c629a48e39919ef734cb8b7e886b99634f0846b64f1de43f">Nvd - Cve-2025-57820</a>
+                      </h2>
+
+                    
+
+                    
+                      <div class="result__extras">
+                        <div class="result__extras__url">
+                          <span class="result__icon">
+                            <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fnvd.nist.gov%2Fvuln%2Fdetail%2FCVE%2D2025%2D57820&amp;rut=a1be05f55800c389c629a48e39919ef734cb8b7e886b99634f0846b64f1de43f">
+                              <img class="result__icon__img" width="16" height="16" alt="" src="//external-content.duckduckgo.com/ip3/nvd.nist.gov.ico" name="i15" />
+                            </a>
+                          </span>
+                          <a class="result__url" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fnvd.nist.gov%2Fvuln%2Fdetail%2FCVE%2D2025%2D57820&amp;rut=a1be05f55800c389c629a48e39919ef734cb8b7e886b99634f0846b64f1de43f">
+                            nvd.nist.gov/vuln/detail/CVE-2025-57820
+                          </a>
+                          
+                            <span>&nbsp; &nbsp; 2025-08-29T00:00:00.0000000</span>
+                          
+                        </div>
+                      </div>
+                    
+
+                    
+                      
+                        <a class="result__snippet" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fnvd.nist.gov%2Fvuln%2Fdetail%2FCVE%2D2025%2D57820&amp;rut=a1be05f55800c389c629a48e39919ef734cb8b7e886b99634f0846b64f1de43f">Information Technology Laboratory National Vulnerability DatabaseVulnerabilities</a>
+                      
+                    
+
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              
+            
+              
+                <div class="result results_links results_links_deep web-result ">
+                  <div class="links_main links_deep result__body"> <!-- This is the visible part -->
+                    
+                      <h2 class="result__title">
+                        <a rel="nofollow" class="result__a" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fadvisories.gitlab.com%2Fpkg%2Fnpm%2Fdevalue%2FCVE%2D2025%2D57820%2F&amp;rut=9a5ad7e9f4b96199ceb653d6d3e2930b41eafe9f0bf31c709a2e2e1b6c30fd6a">devalue prototype pollution vulnerability | GitLab Advisory Database</a>
+                      </h2>
+
+                    
+
+                    
+                      <div class="result__extras">
+                        <div class="result__extras__url">
+                          <span class="result__icon">
+                            <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fadvisories.gitlab.com%2Fpkg%2Fnpm%2Fdevalue%2FCVE%2D2025%2D57820%2F&amp;rut=9a5ad7e9f4b96199ceb653d6d3e2930b41eafe9f0bf31c709a2e2e1b6c30fd6a">
+                              <img class="result__icon__img" width="16" height="16" alt="" src="//external-content.duckduckgo.com/ip3/advisories.gitlab.com.ico" name="i15" />
+                            </a>
+                          </span>
+                          <a class="result__url" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fadvisories.gitlab.com%2Fpkg%2Fnpm%2Fdevalue%2FCVE%2D2025%2D57820%2F&amp;rut=9a5ad7e9f4b96199ceb653d6d3e2930b41eafe9f0bf31c709a2e2e1b6c30fd6a">
+                            advisories.gitlab.com/pkg/npm/devalue/CVE-2025-57820/
+                          </a>
+                          
+                            <span>&nbsp; &nbsp; 2025-08-26T00:00:00.0000000</span>
+                          
+                        </div>
+                      </div>
+                    
+
+                    
+                      
+                        <a class="result__snippet" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fadvisories.gitlab.com%2Fpkg%2Fnpm%2Fdevalue%2FCVE%2D2025%2D57820%2F&amp;rut=9a5ad7e9f4b96199ceb653d6d3e2930b41eafe9f0bf31c709a2e2e1b6c30fd6a">CVE-2025-57820 <b>devalue</b> <b>prototype</b> <b>pollution</b> vulnerability: <b>devalue</b>.parse allows proto to be set A string passed to <b>devalue</b>.parse could represent an object with a proto property, which …</a>
+                      
+                    
+
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              
+            
+              
+                <div class="result results_links results_links_deep web-result ">
+                  <div class="links_main links_deep result__body"> <!-- This is the visible part -->
+                    
+                      <h2 class="result__title">
+                        <a rel="nofollow" class="result__a" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.thesmartscanner.com%2Fvulnerability%2Dlist%2Fdevalue%2Dprototype%2Dpollution%2Dvulnerability&amp;rut=a794f53e8cca61f47ff90d585c310425e3e3ebb2c213adf722ba2099edde2c28">devalue prototype pollution vulnerability - CVE-2025-57820</a>
+                      </h2>
+
+                    
+
+                    
+                      <div class="result__extras">
+                        <div class="result__extras__url">
+                          <span class="result__icon">
+                            <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.thesmartscanner.com%2Fvulnerability%2Dlist%2Fdevalue%2Dprototype%2Dpollution%2Dvulnerability&amp;rut=a794f53e8cca61f47ff90d585c310425e3e3ebb2c213adf722ba2099edde2c28">
+                              <img class="result__icon__img" width="16" height="16" alt="" src="//external-content.duckduckgo.com/ip3/www.thesmartscanner.com.ico" name="i15" />
+                            </a>
+                          </span>
+                          <a class="result__url" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.thesmartscanner.com%2Fvulnerability%2Dlist%2Fdevalue%2Dprototype%2Dpollution%2Dvulnerability&amp;rut=a794f53e8cca61f47ff90d585c310425e3e3ebb2c213adf722ba2099edde2c28">
+                            www.thesmartscanner.com/vulnerability-list/devalue-prototype-pollution-vulnerability
+                          </a>
+                          
+                        </div>
+                      </div>
+                    
+
+                    
+                      
+                        <a class="result__snippet" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.thesmartscanner.com%2Fvulnerability%2Dlist%2Fdevalue%2Dprototype%2Dpollution%2Dvulnerability&amp;rut=a794f53e8cca61f47ff90d585c310425e3e3ebb2c213adf722ba2099edde2c28">A string passed to <b>devalue</b>.parse could represent an object with a __proto__ property, which would assign a <b>prototype</b> to an object while allowing properties to be overwritten:</a>
+                      
+                    
+
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              
+            
+              
+                <div class="result results_links results_links_deep web-result ">
+                  <div class="links_main links_deep result__body"> <!-- This is the visible part -->
+                    
+                      <h2 class="result__title">
+                        <a rel="nofollow" class="result__a" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fsecurityvulnerability.io%2Fvulnerability%2FCVE%2D2025%2D57820&amp;rut=b6415503a71efacfa0881088ea847296f0f13ffb7f327f59ab9f90f292ad1ba1">Prototype Pollution in Svelte&#x27;s Devalue Utility Library</a>
+                      </h2>
+
+                    
+
+                    
+                      <div class="result__extras">
+                        <div class="result__extras__url">
+                          <span class="result__icon">
+                            <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fsecurityvulnerability.io%2Fvulnerability%2FCVE%2D2025%2D57820&amp;rut=b6415503a71efacfa0881088ea847296f0f13ffb7f327f59ab9f90f292ad1ba1">
+                              <img class="result__icon__img" width="16" height="16" alt="" src="//external-content.duckduckgo.com/ip3/securityvulnerability.io.ico" name="i15" />
+                            </a>
+                          </span>
+                          <a class="result__url" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fsecurityvulnerability.io%2Fvulnerability%2FCVE%2D2025%2D57820&amp;rut=b6415503a71efacfa0881088ea847296f0f13ffb7f327f59ab9f90f292ad1ba1">
+                            securityvulnerability.io/vulnerability/CVE-2025-57820
+                          </a>
+                          
+                            <span>&nbsp; &nbsp; 2025-08-26T00:00:00.0000000</span>
+                          
+                        </div>
+                      </div>
+                    
+
+                    
+                      
+                        <a class="result__snippet" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fsecurityvulnerability.io%2Fvulnerability%2FCVE%2D2025%2D57820&amp;rut=b6415503a71efacfa0881088ea847296f0f13ffb7f327f59ab9f90f292ad1ba1">The <b>devalue</b> utility library prior to version 5.3.2 is susceptible to a vulnerability where a string passed to <b>devalue</b>.parse could create objects with overridden properties. This flaw stems from inadequate validation of the proto property and could lead to <b>prototype</b> <b>pollution</b>, potentially compromising the integrity of the application.</a>
+                      
+                    
+
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              
+            
+              
+                <div class="result results_links results_links_deep web-result ">
+                  <div class="links_main links_deep result__body"> <!-- This is the visible part -->
+                    
+                      <h2 class="result__title">
+                        <a rel="nofollow" class="result__a" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fcvefeed.io%2Fvuln%2Fdetail%2FCVE%2D2025%2D57820&amp;rut=df9c6c03360f0eac15fb7ae53ed6969b25a5bbedc5777cfd0d856e8871f5582b">CVE-2025-57820 - Svelte devalue vulnerable to prototype pollution</a>
+                      </h2>
+
+                    
+
+                    
+                      <div class="result__extras">
+                        <div class="result__extras__url">
+                          <span class="result__icon">
+                            <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fcvefeed.io%2Fvuln%2Fdetail%2FCVE%2D2025%2D57820&amp;rut=df9c6c03360f0eac15fb7ae53ed6969b25a5bbedc5777cfd0d856e8871f5582b">
+                              <img class="result__icon__img" width="16" height="16" alt="" src="//external-content.duckduckgo.com/ip3/cvefeed.io.ico" name="i15" />
+                            </a>
+                          </span>
+                          <a class="result__url" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fcvefeed.io%2Fvuln%2Fdetail%2FCVE%2D2025%2D57820&amp;rut=df9c6c03360f0eac15fb7ae53ed6969b25a5bbedc5777cfd0d856e8871f5582b">
+                            cvefeed.io/vuln/detail/CVE-2025-57820
+                          </a>
+                          
+                            <span>&nbsp; &nbsp; 2025-08-26T00:00:00.0000000</span>
+                          
+                        </div>
+                      </div>
+                    
+
+                    
+                      
+                        <a class="result__snippet" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fcvefeed.io%2Fvuln%2Fdetail%2FCVE%2D2025%2D57820&amp;rut=df9c6c03360f0eac15fb7ae53ed6969b25a5bbedc5777cfd0d856e8871f5582b">Svelte <b>devalue</b> is a utility library. Prior to version 5.3.2, a string passed to <b>devalue</b>.parse could represent an object with a __proto__ property and <b>devalue</b>.parse does not check that an index is numeric. This could result in assigning <b>prototypes</b> to objects and properties, leading to <b>prototype</b> <b>pollution</b>. This issue has …</a>
+                      
+                    
+
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              
+            
+              
+                <div class="result results_links results_links_deep web-result ">
+                  <div class="links_main links_deep result__body"> <!-- This is the visible part -->
+                    
+                      <h2 class="result__title">
+                        <a rel="nofollow" class="result__a" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fvuln.vulert.com%2Fvuln%2Ddb%2FCVE%2D2025%2D57820&amp;rut=c33266a183cbe075164201e4489671570d2178bd722b12a0cd5d962b77b6f167">CVE-2025-57820: devalue Package Prototype Pollution Vulnerability</a>
+                      </h2>
+
+                    
+
+                    
+                      <div class="result__extras">
+                        <div class="result__extras__url">
+                          <span class="result__icon">
+                            <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fvuln.vulert.com%2Fvuln%2Ddb%2FCVE%2D2025%2D57820&amp;rut=c33266a183cbe075164201e4489671570d2178bd722b12a0cd5d962b77b6f167">
+                              <img class="result__icon__img" width="16" height="16" alt="" src="//external-content.duckduckgo.com/ip3/vuln.vulert.com.ico" name="i15" />
+                            </a>
+                          </span>
+                          <a class="result__url" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fvuln.vulert.com%2Fvuln%2Ddb%2FCVE%2D2025%2D57820&amp;rut=c33266a183cbe075164201e4489671570d2178bd722b12a0cd5d962b77b6f167">
+                            vuln.vulert.com/vuln-db/CVE-2025-57820
+                          </a>
+                          
+                            <span>&nbsp; &nbsp; 2025-08-26T00:00:00.0000000</span>
+                          
+                        </div>
+                      </div>
+                    
+
+                    
+                      
+                        <a class="result__snippet" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fvuln.vulert.com%2Fvuln%2Ddb%2FCVE%2D2025%2D57820&amp;rut=c33266a183cbe075164201e4489671570d2178bd722b12a0cd5d962b77b6f167">Learn about CVE-2025-57820, a <b>prototype</b> <b>pollution</b> vulnerability in the <b>devalue</b> package, its implications, and how to fix it to secure your application.</a>
+                      
+                    
+
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              
+            
+              
+                <div class="result results_links results_links_deep web-result ">
+                  <div class="links_main links_deep result__body"> <!-- This is the visible part -->
+                    
+                      <h2 class="result__title">
+                        <a rel="nofollow" class="result__a" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.cvedetails.com%2Fcve%2FCVE%2D2025%2D57820%2F&amp;rut=231d63dd9641e818fb3dc976cb6177ec116c87e14e713cc54184fba252a52254">CVE-2025-57820 : Svelte devalue is a utility library. Prior to version ...</a>
+                      </h2>
+
+                    
+
+                    
+                      <div class="result__extras">
+                        <div class="result__extras__url">
+                          <span class="result__icon">
+                            <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.cvedetails.com%2Fcve%2FCVE%2D2025%2D57820%2F&amp;rut=231d63dd9641e818fb3dc976cb6177ec116c87e14e713cc54184fba252a52254">
+                              <img class="result__icon__img" width="16" height="16" alt="" src="//external-content.duckduckgo.com/ip3/www.cvedetails.com.ico" name="i15" />
+                            </a>
+                          </span>
+                          <a class="result__url" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.cvedetails.com%2Fcve%2FCVE%2D2025%2D57820%2F&amp;rut=231d63dd9641e818fb3dc976cb6177ec116c87e14e713cc54184fba252a52254">
+                            www.cvedetails.com/cve/CVE-2025-57820/
+                          </a>
+                          
+                            <span>&nbsp; &nbsp; 2025-08-26T00:00:00.0000000</span>
+                          
+                        </div>
+                      </div>
+                    
+
+                    
+                      
+                        <a class="result__snippet" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.cvedetails.com%2Fcve%2FCVE%2D2025%2D57820%2F&amp;rut=231d63dd9641e818fb3dc976cb6177ec116c87e14e713cc54184fba252a52254">Svelte <b>devalue</b> is a utility library. Prior to version 5.3.2, a string passed to <b>devalue</b>.parse could represent an object with a __proto__ property and <b>devalue</b>.parse does not check that an index is numeric. This could result in assigning <b>prototypes</b> to objects and properties, leading to <b>prototype</b> <b>pollution</b>. This issue has been fixed in version 5.3.2</a>
+                      
+                    
+
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              
+            
+
+            
+              
+              
+                <div class="nav-link">
+                  <form action="/html/" method="post">
+                    <input type="submit" class='btn btn--alt' value="Next" />
+                    <input type="hidden" name="q" value="devalue prototype pollution" />
+                    <input type="hidden" name="s" value="10" />
+                    <input type="hidden" name="nextParams" value="" />
+                    <input type="hidden" name="v" value="l" />
+                    <input type="hidden" name="o" value="json" />
+                    <input type="hidden" name="dc" value="11" />
+                    <input type="hidden" name="api" value="d.js" />
+                    <input type="hidden" name="vqd" value="4-169513818350465462606003458556392867698" />
+
+                    
+                    
+                    
+                      <input name="kl" value="wt-wt" type="hidden" />
+                    
+                    
+                    
+                    
+                  </form>
+                </div>
+              
+            
+
+            <div class="feedback-btn">
+              <a rel="nofollow" href="//duckduckgo.com/feedback.html" target="_new">Feedback</a>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div> <!-- links wrapper //-->
+    
+  </div>
+
+  <div id="bottom_spacing2"></div>
+
+  
+    <img src="//duckduckgo.com/t/sl_h"/>
+  
+</body>
+</html>

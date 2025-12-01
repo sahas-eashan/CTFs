@@ -1,0 +1,203 @@
+================================================================================
+                        AmateursCTF - addition
+================================================================================
+
+Category: Cryptography
+Points: 500
+Flag: amateursCTF{1_h0p3_you_didnT_qU3ry_Th3_s3RVer_100k_tim3s_1b9490c255fe83}
+
+================================================================================
+1. Challenge Analysis
+================================================================================
+
+The challenge provides a Python script (chall.py) running on a server.
+
+Setup:
+------
+The server generates a pool of 100,000 messages. Each message consists of 
+the flag shifted left by 256 bits, plus 256 random bits.
+
+    m = (flag << 256) + random
+
+Encryption:
+-----------
+It uses RSA with a 2048-bit modulus N and a small public exponent e=3.
+
+Interaction:
+------------
+The server asks for a scramble integer (S). It adds this value to every 
+message in the pool, randomly selects one scrambled message, encrypts it, 
+and returns the ciphertext C.
+
+    C = (m + S)^3 mod N
+
+
+================================================================================
+2. The Vulnerability
+================================================================================
+
+There are two distinct vulnerabilities that, when combined, allow us to 
+break the encryption:
+
+The Birthday Paradox (Collision Attack):
+-----------------------------------------
+Although the pool contains 100,000 unique messages, the server picks one at 
+random every time we make a request. According to the Birthday Paradox, we 
+don't need 100,000 requests to pick the same message index twice. We only 
+need roughly sqrt(100,000) ≈ 316 requests to have a 50% chance of a collision.
+
+Related Message Attack (Franklin-Reiter):
+-----------------------------------------
+If we trigger a collision, we have two ciphertexts generated from the same 
+underlying message m, but with different scramble values (S_1 and S_2).
+
+    C_1 = (m + S_1)^3 mod N
+    C_2 = (m + S_2)^3 mod N
+
+Because the exponent e=3 is very small, having two polynomial equations for 
+the same variable allows us to recover the message m efficiently.
+
+
+================================================================================
+3. The Exploit Strategy
+================================================================================
+
+We maintain a history of all (scramble, ciphertext) pairs we receive. For 
+every new response, we check if it creates a solvable system with any 
+previous response.
+
+Let y = m + S_1.
+Then m + S_2 = y + (S_2 - S_1). 
+Let Δ = S_2 - S_1.
+
+We now have two equations:
+
+    y^3 - C_1 ≡ 0 (mod N)
+    (y + Δ)^3 - C_2 ≡ 0 (mod N)
+
+Expanding equation (2):
+
+    y^3 + 3Δy^2 + 3Δ^2y + Δ^3 - C_2 ≡ 0
+
+Substituting y^3 = C_1 into the expansion gives us a quadratic equation. By 
+combining this quadratic with the original cubic equation (or simply using 
+the resultant), we can derive a linear equation to solve for y.
+
+Once we find y, we calculate m = y - S_1, and finally right-shift m by 256 
+bits to recover the flag.
+
+
+================================================================================
+4. Execution
+================================================================================
+
+We wrote a script using pwntools to automate the interaction.
+
+Steps:
+------
+- The script sent incremental scramble values (0, 1, 2, ...)
+- It stored every ciphertext
+- At request #423, the script detected a collision with a previous request
+- It solved the system of equations and recovered the plaintext
+
+Output:
+-------
+[*] Starting birthday attack... making requests.
+...
+[*] Attempts: 400, History size: 401
+[*] Attempts: 420, History size: 421
+[+] Collision found! Request 423 matches a previous request.
+[+] Flag: amateursCTF{1_h0p3_you_didnT_qU3ry_Th3_s3RVer_100k_tim3s_1b9490c255fe83}
+
+================================================================================
+Addition 2
+================================================================================
+
+Category: Cryptography
+Points: 469
+Author: helloperson
+
+The follow-up challenge fixes the birthday issue by rebuilding the 100k pool
+before every query:
+
+    cs = [flag + getrandbits(256) for _ in range(100000)]
+
+Now every request encrypts a fresh plaintext of the form
+
+    m_i = flag << 256 + r_i + scramble
+
+with an independent 256-bit random mask r_i.  Collisions no longer occur, so the
+previous related-message attack does not work.  We need a new observation.
+
+--------------------------------------------------------------------------------
+1. Bounding the ciphertext differences
+--------------------------------------------------------------------------------
+
+We submit the same scramble (0) several times, so all plaintexts share the same
+unknown high bits flag << 256.  The difference between any two plaintexts is
+just the difference between two 256-bit masks, so |m_i - m_j| < 2^256.
+
+Because e = 3, the difference of the cubes also stays tiny:
+
+    Δ_j = m_j^3 - m_0^3
+        = δ_j (3 m_0^2 + 3 m_0 δ_j + δ_j^2)
+        with δ_j = m_j - m_0
+
+The dominant term is below 2^1921 while N is ~2^2048, so no modular wrap occurs.
+By adjusting each ciphertext difference into the range (-N/2, N/2) we obtain the
+true integer Δ_j.
+
+--------------------------------------------------------------------------------
+2. Reconstructing δ ratios exactly
+--------------------------------------------------------------------------------
+
+The ratio of two such differences is
+
+    Δ_j / Δ_i = (δ_j / δ_i) * (L_j / L_i)
+
+where L_k = 3 m_0^2 + 3 m_0 δ_k + δ_k^2.  Since |δ_k| << m_0, the factor
+L_j / L_i is 1 + O(2^-576), meaning the ratio reveals δ_j / δ_i with enormous
+precision.  By feeding the exact fraction Δ_j / Δ_i into
+Fraction(...).limit_denominator(2^256) we recover the true rational s = δ_j / δ_i.
+
+--------------------------------------------------------------------------------
+3. Solving for m_0
+--------------------------------------------------------------------------------
+
+Let α = δ_i / m_0.  Using the exact value of s and the exact ratio
+R = Δ_j / Δ_i we derive the quadratic
+
+    (R/s - s^2) α^2 + 3 (R/s - s) α + 3 (R/s - 1) = 0.
+
+The discriminant is a perfect square, so α is rational and can be determined
+precisely.  Plugging α back into the Δ_i expression gives
+
+    m_0^3 = Δ_i / (α (3 + 3α + α^2)).
+
+The cube root is integral and equals the plaintext of the first sample.
+Shifting right by 256 bits removes the random mask and yields the original flag
+bytes.
+
+--------------------------------------------------------------------------------
+4. Implementation
+--------------------------------------------------------------------------------
+
+The new solver (solve_addition2.py) automates the process:
+
+  1. Gather six ciphertexts using scramble 0.
+  2. For each pair, try the recovery steps above until m_0 is found.
+  3. Output long_to_bytes(m_0 >> 256).
+
+Usage:
+
+    python solve_addition2.py
+
+An optional local sanity check is available via:
+
+    python solve_addition2.py --test
+
+The script performs only exact rational arithmetic, so no floating-point
+precision is required.  Running it against the remote service recovered the
+flag instantly once three ciphertexts had been collected.
+
+================================================================================

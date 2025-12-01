@@ -1,0 +1,68 @@
+[x] Opening connection to amt.rs on port 38639
+[x] Opening connection to amt.rs on port 38639: Trying 35.222.22.255
+[+] Opening connection to amt.rs on port 38639: Done
+[*] Connected! n=2048 bits, e=3
+[*] Starting with: amateursCTF{
+[*] 
+    [12/52] Byte 12...
+[*]   '_': score=0
+[*]   '}': score=0
+[*]   'a': score=0
+[*]   'b': score=0
+[*]   'c': score=0
+[*]   'd': score=0
+[*]   'e': score=0
+[*]   'f': score=0
+[*]   'g': score=0
+[*]   'h': score=0
+[*]   'i': score=0
+[*]   'j': score=0
+[*]   'k': score=0
+[*]   'l': score=0
+[*]   'm': score=0
+[*]   'n': score=0
+[*]   'o': score=0
+[*]   'p': score=0
+[*]   'q': score=0
+[*]   'r': score=0
+[*]   's': score=0
+[*]   't': score=0
+[*]   'u': score=0
+[*]   'v': score=0
+[*]   'w': score=0
+[*]   'x': score=0
+[!] Query 2 failed: 
+[*]   'y': score=0
+[!] Query 0 failed: 
+[*]   'z': score=0
+[!] Query 0 failed: 
+[*]   '0': score=0
+[!] Query 0 failed: 
+[*]   '1': score=0
+[!] Query 0 failed: 
+[*]   '2': score=0
+[!] Query 0 failed: 
+[*]   '3': score=0
+[!] Query 0 failed: 
+[*]   '4': score=0
+[!] Query 0 failed: 
+[*]   '5': score=0
+[!] Query 0 failed: 
+[*]   '6': score=0
+[!] Query 0 failed: 
+[*]   '7': score=0
+[!] Query 0 failed: 
+[*]   '8': score=0
+[!] Query 0 failed: 
+[*]   '9': score=0
+[ERROR] No good guess for byte 12!
+[*] Closed connection to amt.rs port 38639
+Traceback (most recent call last):
+  File "C:\Users\Cyborg\Documents\GitHub\CTFs\Ametuer\addition3\solve_fresh_instance.py", line 155, in <module>
+    flag = solve()
+  File "C:\Users\Cyborg\Documents\GitHub\CTFs\Ametuer\addition3\solve_fresh_instance.py", line 139, in solve
+    log.error(f"No good guess for byte {pos}!")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cyborg\AppData\Roaming\Python\Python313\site-packages\pwnlib\log.py", line 439, in error
+    raise PwnlibException(message % args)
+pwnlib.exception.PwnlibException: No good guess for byte 12!

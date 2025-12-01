@@ -1,0 +1,17 @@
+[x] Opening connection to amt.rs on port 35077
+[x] Opening connection to amt.rs on port 35077: Trying 35.222.22.255
+[+] Opening connection to amt.rs on port 35077: Done
+[*] Connected! n has 2048 bits, e = 3
+[*] Starting with known prefix: amateursCTF{
+[*] [12/52] Searching byte 12...
+[ERROR] Failed to find byte 12!
+[*] Closed connection to amt.rs port 35077
+Traceback (most recent call last):
+  File "C:\Users\Cyborg\Documents\GitHub\CTFs\Ametuer\addition3\solve_final.py", line 244, in <module>
+    flag = solve_remote()
+  File "C:\Users\Cyborg\Documents\GitHub\CTFs\Ametuer\addition3\solve_final.py", line 138, in solve_remote
+    log.error(f"Failed to find byte {pos}!")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cyborg\AppData\Roaming\Python\Python313\site-packages\pwnlib\log.py", line 439, in error
+    raise PwnlibException(message % args)
+pwnlib.exception.PwnlibException: Failed to find byte 12!

@@ -1,0 +1,118 @@
+================================
+Challenge: misc/snake
+
+1. Objective
+
+The goal is to read the flag, which is located at /flag.txt. A SUID binary /readflag is provided to read this file, but it can only be accessed from the admin_menu function within the snake.sh script.
+
+2. Vulnerability Analysis
+
+The exploit relies on chaining two distinct vulnerabilities:
+
+Bash Variable Injection (Word Splitting) in snake.sh
+
+Command Injection in the sed utility, also in snake.sh
+
+Admin Access:
+To access admin_menu, we must pass the login function.
+
+The login function calls ./login.py $input_uid $input_passwd.
+
+If login.py exits with code 255, the admin_menu is launched.
+
+login.py exits with 255 only if the provided uid matches the first line in the /srv/app/data/uids.txt file.
+
+Our goal is to delete the original admin's UID from line 1 of uids.txt, promoting our own UID to the top.
+
+Vulnerability 1: Bash Variable Injection
+
+When we log in, the script reads our input: read input_uid
+
+It then executes: ./login.py $input_uid $input_passwd
+
+Due to Bash's word splitting, if we enter 12345 my_payload as the input_uid, the shell runs the command as: ./login.py 12345 my_payload $input_passwd
+
+The login.py script checks sys.argv[1] (the UID) and sys.argv[2] (the password).
+
+We can register a user with UID: 12345 and Password: my_payload. Then, when we log in with UID: 12345 my_payload and Password: garbage, the Python script authenticates us correctly.
+
+After login.py exits, the shell script executes uid=$input_uid. The $uid variable in Bash is now set to the full poisoned string: "12345 my_payload".
+
+Vulnerability 2: Sed Command Injection
+
+In the user_menu, the delete function executes: sed -i "/^$uid$/d" /srv/app/data/uids.txt
+
+The $uid variable is directly concatenated into the sed command, unsanitized.
+
+By setting our $uid variable to "12345 /d;1d;/x", we can inject commands.
+
+The Payload:
+
+Password / Payload: /d;1d;/x
+
+When we trigger the delete function, the sed command becomes:
+sed -i "/^12345 /d;1d;/x$/d" /srv/app/data/uids.txt
+
+sed interprets this as three separate commands:
+
+/^12345 /d: Harmlessly tries to match and delete a line starting with "12345 ".
+
+1d: This is the exploit. It unconditionally deletes the first line of the file (the admin).
+
+/x$/d: Harmlessly tries to match and delete a line ending in "x".
+
+3. Step-by-Step Exploit
+
+Register the Malicious User:
+
+register
+
+UID: (Note the UID it gives you, e.g., 229461740427736)
+
+Password: /d;1d;/x
+
+You are logged in. Log out immediately (settings -> logout).
+
+Poison the $uid Variable:
+
+login
+
+UID: 229461740427736 /d;1d;/x (Your UID, a space, then the payload)
+
+Password: garbage
+
+This logs you in. The shell's $uid variable is now poisoned.
+
+Trigger the sed Injection:
+
+settings
+
+delete
+
+This executes the sed command, deleting line 1 of uids.txt.
+
+Handle "Ghost" Users (If Necessary):
+
+Sometimes, other users (like from a previous failed attempt) might be in the uids.txt file. The 1d command only deletes the current top line.
+
+If you log in as admin (Step 5) and still see the snake game, it means you are not on line 1 yet.
+
+Repeat Step 2 and Step 3 one more time. This will delete the new top line, moving you up.
+
+Log in as Admin:
+
+login
+
+UID: 229461740427736 (Your normal UID)
+
+Password: /d;1d;/x (Your normal password)
+
+The login.py script now sees your UID on line 1 and exits with 255, granting you admin access.
+
+Get the Flag:
+
+You will now see the "Super Secret Admin Menu".
+
+flag
+
+The flag is printed to the screen.
